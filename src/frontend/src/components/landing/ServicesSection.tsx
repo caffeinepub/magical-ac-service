@@ -4,31 +4,31 @@ const services = [
   {
     icon: Snowflake,
     title: 'Jet Wash Service',
-    description: 'Special jet pump cleaning to remove dirt and dust.',
+    description: 'Indoor and outdoor deep cleaning.',
   },
   {
     icon: Wrench,
-    title: 'Repairing',
-    description: 'Professional repair work for all AC brands.',
+    title: 'Expert Repairing',
+    description: 'Precise PCB and compressor work.',
   },
   {
     icon: Fuel,
     title: 'Gas Refilling',
-    description: 'Original gas refilling for optimal cooling.',
+    description: 'Original gas for full cooling guarantee.',
   },
   {
     icon: Package,
     title: 'Installation',
-    description: 'Safe installation and fitting of new or old ACs.',
+    description: 'Safe fitting for new and old ACs.',
   },
 ];
 
 export default function ServicesSection() {
   return (
-    <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-          Our AC Services
+    <section className="py-16 bg-white">
+      <div className="container mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold mb-10 text-gray-800 underline underline-offset-8">
+          Our Special AC Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
@@ -36,13 +36,13 @@ export default function ServicesSection() {
             return (
               <div
                 key={index}
-                className="bg-card p-6 rounded-2xl shadow-xl border-t-4 border-service-blue text-center hover:transform hover:scale-105 transition-all duration-200"
+                className="p-6 bg-blue-50 rounded-2xl border-b-4 border-blue-600 shadow-md"
               >
-                <Icon className="w-12 h-12 mx-auto mb-4 text-service-blue" />
-                <h3 className="text-xl font-bold mb-2 text-card-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground">{service.description}</p>
+                <Icon className="w-10 h-10 mx-auto mb-4 text-blue-500" />
+                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
+                <p className="text-gray-600 text-sm italic font-bold">
+                  {service.description}
+                </p>
               </div>
             );
           })}

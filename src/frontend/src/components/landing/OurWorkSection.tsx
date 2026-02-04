@@ -11,12 +11,6 @@ export default function OurWorkSection() {
       image: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&h=400&q=80',
       title: 'Outdoor Unit Maintenance',
       caption: 'Professional outdoor condenser cleaning'
-    },
-    {
-      id: 3,
-      image: 'https://images.unsplash.com/photo-1631545806609-4b0e36e4c824?auto=format&fit=crop&w=600&h=400&q=80',
-      title: 'Complete AC Service',
-      caption: 'Full system inspection and cleaning'
     }
   ];
 

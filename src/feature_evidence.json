@@ -2,11 +2,10 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-new-landing-page-section-component-for-an-our-work-gallery-image-card-grid-and-add-it-to-the-landing-page-flow-so-it-renders-between-existing-sections-place-it-after-servicessection-and-before-coveragesection",
-      "featureTitle": "Create a new landing-page section component for an \"Our Work\" gallery (image card grid) and add it to the landing page flow so it renders between existing sections (place it after ServicesSection and before CoverageSection).",
+      "featureId": "feature-update-the-landing-page-services-section-component-frontend-src-components-landing-servicessection-tsx-to-match-the-provided-4-card-grid-layout-and-styling-white-section-background-centered-underlined-section-heading-and-four-cards-using-a-light-blue-background-rounded-corners-bottom-border-accent-and-shadow",
+      "featureTitle": "Update the landing page Services section component (frontend/src/components/landing/ServicesSection.tsx) to match the provided 4-card grid layout and styling: white section background, centered underlined section heading, and four cards using a light-blue background, rounded corners, bottom border accent, and shadow.",
       "files": [
-        "frontend/src/components/landing/LandingPage.tsx",
-        "frontend/src/components/landing/OurWorkSection.tsx"
+        "frontend/src/components/landing/ServicesSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -21,10 +20,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-implement-the-our-work-gallery-ui-to-match-the-provided-layout-intent-section-heading-and-subtitle-followed-by-a-responsive-grid-1-column-on-mobile-2-on-small-screens-3-on-large-screens-of-image-cards-with-rounded-corners-subtle-border-shadow-and-hover-animations-image-zoom-card-shadow-increase-use-english-for-the-visible-heading-subtitle-and-card-titles-descriptions",
-      "featureTitle": "Implement the \"Our Work\" gallery UI to match the provided layout intent: section heading and subtitle, followed by a responsive grid (1 column on mobile, 2 on small screens, 3 on large screens) of image cards with rounded corners, subtle border, shadow, and hover animations (image zoom + card shadow increase). Use English for the visible heading/subtitle and card titles/descriptions.",
+      "featureId": "feature-ensure-the-services-section-uses-english-user-facing-text-while-preserving-the-service-titles-and-translating-the-gujarati-descriptions-into-english-for-the-four-services-jet-wash-service-expert-repairing-gas-refilling-and-installation",
+      "featureTitle": "Ensure the Services section uses English user-facing text while preserving the service titles and translating the Gujarati descriptions into English for the four services: Jet Wash Service, Expert Repairing, Gas Refilling, and Installation.",
       "files": [
-        "frontend/src/components/landing/OurWorkSection.tsx"
+        "frontend/src/components/landing/ServicesSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -39,10 +38,10 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-seed-the-gallery-with-at-least-3-items-including-the-provided-unsplash-image-url-for-one-of-the-cards-and-ensure-images-are-sized-cropped-consistently-e-g-fixed-height-with-object-cover",
-      "featureTitle": "Seed the gallery with at least 3 items, including the provided Unsplash image URL for one of the cards, and ensure images are sized/cropped consistently (e.g., fixed height with object-cover).",
+      "featureId": "feature-replace-the-icon-implementation-in-the-services-section-to-avoid-font-awesome-dependency-while-still-showing-the-four-intended-icons-snowflake-tools-gas-pump-box-open-package-with-similar-size-and-blue-color-as-the-provided-snippet",
+      "featureTitle": "Replace the icon implementation in the Services section to avoid Font Awesome dependency while still showing the four intended icons (snowflake, tools, gas pump, box/open package) with similar size and blue color as the provided snippet.",
       "files": [
-        "frontend/src/components/landing/OurWorkSection.tsx"
+        "frontend/src/components/landing/ServicesSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",

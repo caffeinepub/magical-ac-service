@@ -1,59 +1,54 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add 'Our Work' gallery section to landing page",
+  "title": "Services section 4-card layout + English copy + icon update (no Font Awesome)",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Create a new landing-page Our Work gallery section component and wire it into LandingPage between ServicesSection and CoverageSection.",
+      "summary": "Restyle the landing Services section to match the provided 4-card grid layout (white section, centered underlined heading, light-blue cards with rounded corners, bottom accent border, and shadow).",
       "acceptanceCriteria": [
-        "A new React component exists under the existing landing components folder (frontend/src/components/landing/...) for the gallery section.",
-        "LandingPage includes the new gallery section after ServicesSection and before CoverageSection.",
-        "No changes are made to files under frontend/src/components/ui or other immutable paths."
+        "Services section background is white and uses similar vertical spacing to the provided snippet.",
+        "Section heading is centered, underlined, and uses an English heading (not Gujarati) while preserving the same visual emphasis (underline + offset).",
+        "Cards render in a responsive 1/2/4-column grid with consistent spacing.",
+        "Each card uses: padding, light-blue background, rounded-2xl corners, a bottom border accent (border-b-4), and a visible shadow."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/OurWorkSection.tsx",
-          "operation": "create",
-          "description": "Create a new landing section component that will render the Our Work gallery content (static, frontend-only)."
-        },
-        {
-          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Import and render OurWorkSection after ServicesSection and before CoverageSection to match the required landing page flow."
+          "description": "Update section container styling to use a white background and the provided vertical spacing; update the section heading styling to be centered and underlined with underline offset; update card container styles to match the provided light-blue background, rounded-2xl corners, border-b-4 bottom accent, and shadow-md while preserving the existing responsive 1/2/4-column grid."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Implement the Our Work gallery UI with English heading/subtitle and responsive image card grid with hover animations.",
+      "summary": "Ensure all user-facing Services section text is English, with titles exactly matching the requested four services and Gujarati descriptions translated to English equivalents.",
       "acceptanceCriteria": [
-        "The section displays a heading \"Our Work\" and a subtitle \"Professional indoor and outdoor AC cleaning\" (or equivalent English phrasing).",
-        "The gallery grid is responsive with breakpoints equivalent to grid-cols-1 / sm:grid-cols-2 / lg:grid-cols-3.",
-        "Each card includes an image, an English title, and (if included) a short English caption; images have meaningful alt text.",
-        "Hovering a card increases its shadow and slightly scales the image (no layout shift)."
+        "No Gujarati text is displayed in the Services section after the update.",
+        "The four service titles appear exactly as: Jet Wash Service, Expert Repairing, Gas Refilling, Installation.",
+        "Each card contains an English description corresponding to the original Gujarati sentence meaning (deep cleaning indoor/outdoor; precise PCB/compressor work; original gas for full cooling; safe fitting for new/old AC)."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/OurWorkSection.tsx",
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Implement section heading/subtitle and a responsive Tailwind grid of image cards with rounded corners, subtle border/shadow, overflow-hidden image container, and hover interactions (card shadow increase + image scale) without layout shift."
+          "description": "Update the services data to ensure titles exactly match: Jet Wash Service, Expert Repairing, Gas Refilling, Installation; replace any existing non-matching titles (e.g., 'Repairing') and update descriptions to English translations reflecting the original Gujarati meanings (indoor/outdoor deep cleaning; precise PCB/compressor work; original gas for full cooling; safe fitting for new/old AC)."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Seed the Our Work gallery with at least three static items including the provided Unsplash URL and consistent image cropping.",
+      "summary": "Replace/confirm the Services section icon implementation to avoid any Font Awesome dependency while still showing the intended four icons with similar size and blue color.",
       "acceptanceCriteria": [
-        "At least 3 gallery items render by default.",
-        "One item uses the exact provided image URL.",
-        "All images display with consistent dimensions/cropping (e.g., same height and object-cover)."
+        "Each of the four service cards shows an icon above the title with approximately the same visual prominence as text-4xl.",
+        "Icons are blue and aligned/centered consistently across cards.",
+        "No new Font Awesome stylesheet/script dependency is introduced."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/OurWorkSection.tsx",
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Add a static in-component data list with at least 3 gallery items, ensuring one uses the exact Unsplash URL (https://images.unsplash.com/photo-1621905235850-66c430939502?auto=format&fit=crop&w=600&h=400&q=80), and render images with consistent fixed height and object-cover cropping."
+          "description": "Ensure the four service icons are rendered using the existing non-Font-Awesome approach (e.g., lucide-react) for snowflake, tools, gas pump, and box/open package; size and style the icons to match the provided prominence (approx. text-4xl) and blue color, centered above each title, without adding any Font Awesome dependency."
         }
       ]
     }

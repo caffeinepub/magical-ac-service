@@ -1,12 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Add a new “Our Work” gallery section to the landing page to showcase example AC cleaning work.
+**Goal:** Update the landing page Services section to match the provided 4-card layout/styling and ensure all user-facing content is in English.
 
 **Planned changes:**
-- Create a new landing-page section component for an “Our Work” image-card gallery under `frontend/src/components/landing/...`.
-- Insert the new gallery section into `LandingPage` so it renders after `ServicesSection` and before `CoverageSection`.
-- Implement a responsive image-card grid (1 column mobile, 2 on small screens, 3 on large screens) with consistent image cropping, meaningful alt text, and hover effects (image zoom + increased card shadow).
-- Seed the gallery with at least 3 static items, including one using the provided Unsplash image URL, with English heading/subtitle and English card titles/descriptions.
+- Update `frontend/src/components/landing/ServicesSection.tsx` to use a white section background, centered underlined English heading, and a responsive 1/2/4-column card grid matching the provided styling (light-blue card background, rounded corners, bottom border accent, shadow).
+- Replace Gujarati descriptions with English translations while keeping the four service titles exactly: Jet Wash Service, Expert Repairing, Gas Refilling, Installation.
+- Replace Font Awesome-based icons with non-Font Awesome icons that still represent snowflake, tools, gas pump, and box/open package, keeping similar size and blue color.
 
-**User-visible outcome:** Visitors to the landing page see an “Our Work” section between Services and Coverage, featuring a responsive grid of example work cards with images and subtle hover animations.
+**User-visible outcome:** The Services section displays a clean, white-background section with a centered underlined English heading and four consistently styled service cards in a responsive grid, each showing a blue icon, the required title, and an English description.
