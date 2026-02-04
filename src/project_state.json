@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 27,
-  "summary": "ICP dapp scaffold with Motoko backend and React + Vite + Tailwind frontend (shadcn/ui + Internet Identity hooks), currently being used to build a Gujarati marketing/landing page for “Magical AC Service” (Ahmedabad/Gandhinagar) including hero, services, service-areas/coverage, booking CTA via WhatsApp/call, and an Our Work/gallery section with ongoing content/layout iterations.",
+  "projectStateVersion": 43,
+  "summary": "Marketing/landing website for “Magical AC Service” (Gujarati) built as a static HTML + Tailwind UI with sections for hero, services, service areas (Ahmedabad & Gandhinagar), booking CTA/form that sends a prefilled WhatsApp message, and contact CTAs (WhatsApp + phone).",
   "existing_features": [
     {
       "id": "IF-1",
@@ -139,38 +139,23 @@
       "version": 1
     },
     {
-      "id": "feature-update-the-landing-page-services-section-component-frontend-src-components-landing-servicessection-tsx-to-match-the-provided-4-card-grid-layout-and-styling-white-section-background-centered-underlined-section-heading-and-four-cards-using-a-light-blue-background-rounded-corners-bottom-border-accent-and-shadow",
-      "title": "Update the landing page Services section component (frontend/src/components/landing/ServicesSection.tsx) to match the provided 4-card grid layout and styling: white section background, centered underlined section heading, and four cards using a light-blue background, rounded corners, bottom border accent, and shadow.",
+      "id": "feature-update-the-react-landing-page-styling-to-match-the-provided-html-snippet-s-look-and-feel-for-the-top-navigation-and-hero-section-keep-the-sticky-white-nav-with-a-bold-underlined-italic-brand-title-and-an-orange-book-now-button-and-update-the-hero-section-to-use-a-blue-diagonal-gradient-background-linear-gradient-135deg-from-1e3a8a-to-3b82f6-with-centered-heading-and-cta-buttons-for-whatsapp-and-phone",
+      "title": "Update the React landing page styling to match the provided HTML snippet’s look and feel for the top navigation and hero section: keep the sticky white nav with a bold/underlined/italic brand title and an orange “Book Now” button, and update the hero section to use a blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6) with centered heading and CTA buttons for WhatsApp and phone.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-ensure-the-services-section-uses-english-user-facing-text-while-preserving-the-service-titles-and-translating-the-gujarati-descriptions-into-english-for-the-four-services-jet-wash-service-expert-repairing-gas-refilling-and-installation",
-      "title": "Ensure the Services section uses English user-facing text while preserving the service titles and translating the Gujarati descriptions into English for the four services: Jet Wash Service, Expert Repairing, Gas Refilling, and Installation.",
+      "id": "feature-replace-all-remaining-gujarati-user-facing-text-in-the-landing-page-sections-with-clear-english-equivalents-while-keeping-the-meaning-at-minimum-services-section-heading-and-service-descriptions-ensure-the-hero-tagline-is-english",
+      "title": "Replace all remaining Gujarati user-facing text in the landing page sections with clear English equivalents while keeping the meaning (at minimum: Services section heading and service descriptions; ensure the hero tagline is English).",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
-    },
-    {
-      "id": "feature-replace-the-icon-implementation-in-the-services-section-to-avoid-font-awesome-dependency-while-still-showing-the-four-intended-icons-snowflake-tools-gas-pump-box-open-package-with-similar-size-and-blue-color-as-the-provided-snippet",
-      "title": "Replace the icon implementation in the Services section to avoid Font Awesome dependency while still showing the four intended icons (snowflake, tools, gas pump, box/open package) with similar size and blue color as the provided snippet.",
-      "reqIds": [
-        "REQ-3"
-      ],
-      "version": 1
     }
   ],
-  "new_feature_requests": [
-    {
-      "id": "AR-1",
-      "summary": "Update/replace the Services section UI with the provided Gujarati “અમારી સ્પેશિયલ એસી સર્વિસ” 4-card layout (Jet Wash / Expert Repairing / Gas Refilling / Installation) and styling.",
-      "reqIds": [],
-      "status": "pending"
-    }
-  ],
+  "new_feature_requests": [],
   "architectural_notes": [
     "Frontend uses React + Vite + Tailwind with shadcn/ui component primitives.",
     "Authentication is handled via Internet Identity with frontend hooks to create/use an authenticated actor.",
@@ -180,9 +165,12 @@
     "Build-template frontend includes custom ESLint rules to enforce Internet Identity integration patterns and prevent problematic query-key usage (e.g., BigInt).",
     "Build-template includes standardized image/tooling scripts (e.g., resize/prune) as part of the reusable build pipeline.",
     "Build system now includes additional build/export metadata and scripts (e.g., build.sh and build-request/spec artifacts) to support ICP CLI/GitHub export workflows.",
-    "Landing page now includes an additional OurWorkSection component as part of the composed marketing/landing UI."
+    "Landing page now includes an additional OurWorkSection component as part of the composed marketing/landing UI.",
+    "Core infrastructure/template sync update (component:core-infrastructure:v1.0.2) touching backend, build-template, and frontend config/tooling; no new functional surface area tracked beyond maintenance/version alignment."
   ],
-  "known_issues": [],
+  "known_issues": [
+    "Deployment encountered an error after updating the Service Areas section (deployment error reported)."
+  ],
   "isFixRequest": false,
   "gameProjectType": "none",
   "projectName": "Magical AC Service",

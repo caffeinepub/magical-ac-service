@@ -1,46 +1,39 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-04T13:14:34.181Z",
+  "generatedAt": "2026-02-04T13:50:57.127Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
   },
   "requirements": {
-    "total": 3,
-    "implemented": 3,
+    "total": 2,
+    "implemented": 2,
     "items": [
       {
         "id": "REQ-1",
-        "summary": "Update the landing page Services section component (frontend/src/components/landing/ServicesSection.tsx) to match the provided 4-card grid layout and styling: white section background, centered underlined section heading, and four cards using a light-blue background, rounded corners, bottom border accent, and shadow.",
+        "summary": "Update the React landing page styling to match the provided HTML snippet’s look and feel for the top navigation and hero section: keep the sticky white nav with a bold/underlined/italic brand title and an orange “Book Now” button, and update the hero section to use a blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6) with centered heading and CTA buttons for WhatsApp and phone.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/landing/ServicesSection.tsx"
+          "frontend/src/components/landing/LandingNav.tsx",
+          "frontend/src/components/landing/HeroSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/landing/ServicesSection.tsx"
+          "frontend/src/components/landing/LandingNav.tsx",
+          "frontend/src/components/landing/HeroSection.tsx"
         ]
       },
       {
         "id": "REQ-2",
-        "summary": "Ensure the Services section uses English user-facing text while preserving the service titles and translating the Gujarati descriptions into English for the four services: Jet Wash Service, Expert Repairing, Gas Refilling, and Installation.",
+        "summary": "Replace all remaining Gujarati user-facing text in the landing page sections with clear English equivalents while keeping the meaning (at minimum: Services section heading and service descriptions; ensure the hero tagline is English).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/components/landing/ServicesSection.tsx"
+          "frontend/src/components/landing/ServicesSection.tsx",
+          "frontend/src/components/landing/HeroSection.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/components/landing/ServicesSection.tsx"
-        ]
-      },
-      {
-        "id": "REQ-3",
-        "summary": "Replace the icon implementation in the Services section to avoid Font Awesome dependency while still showing the four intended icons (snowflake, tools, gas pump, box/open package) with similar size and blue color as the provided snippet.",
-        "status": "implemented",
-        "plannedFiles": [
-          "frontend/src/components/landing/ServicesSection.tsx"
-        ],
-        "matchedFiles": [
-          "frontend/src/components/landing/ServicesSection.tsx"
+          "frontend/src/components/landing/ServicesSection.tsx",
+          "frontend/src/components/landing/HeroSection.tsx"
         ]
       }
     ]
@@ -50,6 +43,8 @@
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
+    "frontend/src/components/landing/HeroSection.tsx",
+    "frontend/src/components/landing/LandingNav.tsx",
     "frontend/src/components/landing/ServicesSection.tsx",
     "project_state.json",
     "scratch/component-selection.json",

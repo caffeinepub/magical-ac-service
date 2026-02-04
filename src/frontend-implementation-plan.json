@@ -1,54 +1,47 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Services section 4-card layout + English copy + icon update (no Font Awesome)",
+  "title": "Landing page design alignment and English translation cleanup",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Restyle the landing Services section to match the provided 4-card grid layout (white section, centered underlined heading, light-blue cards with rounded corners, bottom accent border, and shadow).",
+      "summary": "Match the provided HTML look-and-feel for the sticky top navigation and hero section, including the specified gradient hero background and CTA links.",
       "acceptanceCriteria": [
-        "Services section background is white and uses similar vertical spacing to the provided snippet.",
-        "Section heading is centered, underlined, and uses an English heading (not Gujarati) while preserving the same visual emphasis (underline + offset).",
-        "Cards render in a responsive 1/2/4-column grid with consistent spacing.",
-        "Each card uses: padding, light-blue background, rounded-2xl corners, a bottom border accent (border-b-4), and a visible shadow."
+        "Landing navigation remains sticky and visually matches the provided snippet (white background, shadow, underlined/italic brand, orange Book Now button).",
+        "Hero section uses the specified blue diagonal gradient background (not an image background).",
+        "Hero CTA buttons continue to link to WhatsApp (wa.me) and phone (tel:) using the existing number 8000262644."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/ServicesSection.tsx",
+          "path": "frontend/src/components/landing/LandingNav.tsx",
           "operation": "modify",
-          "description": "Update section container styling to use a white background and the provided vertical spacing; update the section heading styling to be centered and underlined with underline offset; update card container styles to match the provided light-blue background, rounded-2xl corners, border-b-4 bottom accent, and shadow-md while preserving the existing responsive 1/2/4-column grid."
+          "description": "Adjust nav layout and Tailwind classes to align with the provided HTML snippet: keep sticky white nav + shadow, ensure brand styling remains bold/underlined/italic, and update the “Book Now” button styling to match the orange button/hover behavior from the snippet. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Replace the current background-image/overlay hero styling with the required blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6), keep centered heading and CTA buttons, and ensure WhatsApp (wa.me) and phone (tel:) links continue using 8000262644. Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Ensure all user-facing Services section text is English, with titles exactly matching the requested four services and Gujarati descriptions translated to English equivalents.",
+      "summary": "Translate all remaining Gujarati user-facing text in landing page sections to clear English equivalents while preserving meaning.",
       "acceptanceCriteria": [
-        "No Gujarati text is displayed in the Services section after the update.",
-        "The four service titles appear exactly as: Jet Wash Service, Expert Repairing, Gas Refilling, Installation.",
-        "Each card contains an English description corresponding to the original Gujarati sentence meaning (deep cleaning indoor/outdoor; precise PCB/compressor work; original gas for full cooling; safe fitting for new/old AC)."
+        "No Gujarati text remains visible anywhere in the rendered landing page UI.",
+        "Services section content is fully in English (section title + each service description).",
+        "Hero tagline is English and communicates the same meaning as the Gujarati line (fast + trusted AC service in Ahmedabad)."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Update the services data to ensure titles exactly match: Jet Wash Service, Expert Repairing, Gas Refilling, Installation; replace any existing non-matching titles (e.g., 'Repairing') and update descriptions to English translations reflecting the original Gujarati meanings (indoor/outdoor deep cleaning; precise PCB/compressor work; original gas for full cooling; safe fitting for new/old AC)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Replace/confirm the Services section icon implementation to avoid any Font Awesome dependency while still showing the intended four icons with similar size and blue color.",
-      "acceptanceCriteria": [
-        "Each of the four service cards shows an icon above the title with approximately the same visual prominence as text-4xl.",
-        "Icons are blue and aligned/centered consistently across cards.",
-        "No new Font Awesome stylesheet/script dependency is introduced."
-      ],
-      "file_operations": [
+          "description": "Translate the Services section heading and all service descriptions from Gujarati to clear English while keeping the original meaning; ensure no Gujarati text remains in this section after updates. Verify the component's usage instructions before implementing."
+        },
         {
-          "path": "frontend/src/components/landing/ServicesSection.tsx",
+          "path": "frontend/src/components/landing/HeroSection.tsx",
           "operation": "modify",
-          "description": "Ensure the four service icons are rendered using the existing non-Font-Awesome approach (e.g., lucide-react) for snowflake, tools, gas pump, and box/open package; size and style the icons to match the provided prominence (approx. text-4xl) and blue color, centered above each title, without adding any Font Awesome dependency."
+          "description": "Confirm the hero tagline and any other user-facing hero text remains fully English and matches the intended meaning (fast + trusted AC service in Ahmedabad), with no Gujarati visible. Verify the component's usage instructions before implementing."
         }
       ]
     }

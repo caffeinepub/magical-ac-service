@@ -19,16 +19,16 @@ const services = [
   {
     icon: Package,
     title: 'Installation',
-    description: 'Safe fitting for new and old ACs.',
+    description: 'Safe fitting of new and old ACs.',
   },
 ];
 
 export default function ServicesSection() {
   return (
     <section className="py-16 bg-white">
-      <div className="container mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-10 text-gray-800 underline underline-offset-8">
-          Our Special AC Services
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 underline underline-offset-8 decoration-blue-500">
+          Our Services
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {services.map((service, index) => {
@@ -36,11 +36,11 @@ export default function ServicesSection() {
             return (
               <div
                 key={index}
-                className="p-6 bg-blue-50 rounded-2xl border-b-4 border-blue-600 shadow-md"
+                className="bg-white p-8 rounded-2xl shadow-lg border-b-4 border-blue-600 text-center"
               >
-                <Icon className="w-10 h-10 mx-auto mb-4 text-blue-500" />
-                <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                <p className="text-gray-600 text-sm italic font-bold">
+                <Icon className="w-12 h-12 mx-auto mb-4 text-blue-600" />
+                <h3 className="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
+                <p className="text-gray-600">
                   {service.description}
                 </p>
               </div>
