@@ -1,47 +1,88 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Landing page design alignment and English translation cleanup",
+  "title": "Simplify landing page to text-only and update Service Areas",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Match the provided HTML look-and-feel for the sticky top navigation and hero section, including the specified gradient hero background and CTA links.",
+      "summary": "Remove the Our Work section so it is no longer displayed anywhere on the landing page.",
       "acceptanceCriteria": [
-        "Landing navigation remains sticky and visually matches the provided snippet (white background, shadow, underlined/italic brand, orange Book Now button).",
-        "Hero section uses the specified blue diagonal gradient background (not an image background).",
-        "Hero CTA buttons continue to link to WhatsApp (wa.me) and phone (tel:) using the existing number 8000262644."
+        "Landing page no longer renders the Our Work/gallery section",
+        "There are no remaining navigation/scroll targets or headings referencing “Our Work”"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/LandingNav.tsx",
+          "path": "frontend/src/components/landing/LandingPage.tsx",
           "operation": "modify",
-          "description": "Adjust nav layout and Tailwind classes to align with the provided HTML snippet: keep sticky white nav + shadow, ensure brand styling remains bold/underlined/italic, and update the “Book Now” button styling to match the orange button/hover behavior from the snippet. Verify the component's usage instructions before implementing."
+          "description": "Remove the OurWorkSection import and remove its render from the landing page composition so it cannot appear anywhere in the landing flow."
         },
         {
-          "path": "frontend/src/components/landing/HeroSection.tsx",
-          "operation": "modify",
-          "description": "Replace the current background-image/overlay hero styling with the required blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6), keep centered heading and CTA buttons, and ensure WhatsApp (wa.me) and phone (tel:) links continue using 8000262644. Verify the component's usage instructions before implementing."
+          "path": "frontend/src/components/landing/OurWorkSection.tsx",
+          "operation": "delete",
+          "description": "Delete the OurWorkSection implementation to ensure the gallery section (and its heading/scroll references) cannot be reintroduced or displayed."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Translate all remaining Gujarati user-facing text in landing page sections to clear English equivalents while preserving meaning.",
+      "summary": "Remove service images and decorative iconography to make service-related UI fully text-based while keeping CTAs functional.",
       "acceptanceCriteria": [
-        "No Gujarati text remains visible anywhere in the rendered landing page UI.",
-        "Services section content is fully in English (section title + each service description).",
-        "Hero tagline is English and communicates the same meaning as the Gujarati line (fast + trusted AC service in Ahmedabad)."
+        "No <img> elements remain in any service-related sections (including any gallery/work examples)",
+        "Services section displays titles/descriptions without icons",
+        "Service Areas section displays plain text area names without emoji/icon prefixes",
+        "Hero/CTA buttons/links render without decorative icons (text-only CTAs remain functional)"
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Translate the Services section heading and all service descriptions from Gujarati to clear English while keeping the original meaning; ensure no Gujarati text remains in this section after updates. Verify the component's usage instructions before implementing."
+          "description": "Remove lucide-react icon imports and update the services data/rendering so cards show only service title and description (no icon components)."
         },
         {
           "path": "frontend/src/components/landing/HeroSection.tsx",
           "operation": "modify",
-          "description": "Confirm the hero tagline and any other user-facing hero text remains fully English and matches the intended meaning (fast + trusted AC service in Ahmedabad), with no Gujarati visible. Verify the component's usage instructions before implementing."
+          "description": "Remove decorative CTA icons (WhatsApp/Phone) and adjust CTA link content/styling so CTAs remain text-only and functional."
+        },
+        {
+          "path": "frontend/src/components/landing/FloatingWhatsAppButton.tsx",
+          "operation": "modify",
+          "description": "Replace the icon-only floating WhatsApp control with a text-only control (no decorative iconography) while keeping the WhatsApp link behavior unchanged."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingFooter.tsx",
+          "operation": "modify",
+          "description": "Remove decorative icons from footer call/WhatsApp shortcuts and any other iconography so footer actions are text-only links while preserving functionality."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Update Service Areas to list exactly the specified locations and remove all other locations and any icon/emoji prefixes.",
+      "acceptanceCriteria": [
+        "Service Areas section contains only the specified areas and removes previously listed areas not in the user’s list",
+        "User-facing text remains in English",
+        "“Gandhinagar (All Sectors)” appears exactly as written"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Replace the existing area groups with a plain-text list containing exactly: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors); remove any 📍 or other icon/emoji prefixes and remove any extra locations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Align coverage/summary text that enumerates locations with the updated Service Areas list and avoid mentioning removed locations.",
+      "acceptanceCriteria": [
+        "Coverage/summary section does not mention any locations that are not in the new Service Areas list",
+        "Coverage/summary section still clearly states service availability in Ahmedabad and Gandhinagar (All Sectors)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/landing/CoverageSection.tsx",
+          "operation": "modify",
+          "description": "Update the coverage paragraph to reference only locations from the updated Service Areas list and ensure it clearly states availability across Ahmedabad and Gandhinagar (All Sectors) without mentioning removed areas."
         }
       ]
     }

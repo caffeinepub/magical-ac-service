@@ -1,56 +1,89 @@
 {
   "kind": "build_request",
-  "title": "Apply provided HTML landing design and translate remaining Gujarati text to English",
+  "title": "Simplify landing page: remove Our Work and make content text-only; update service areas list",
   "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Update the React landing page styling to match the provided HTML snippet’s look and feel for the top navigation and hero section: keep the sticky white nav with a bold/underlined/italic brand title and an orange “Book Now” button, and update the hero section to use a blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6) with centered heading and CTA buttons for WhatsApp and phone.",
+      "text": "Remove the “Our Work” section from the landing page so it is no longer displayed anywhere.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "<nav class=\"bg-white shadow-lg p-4 sticky top-0 z-50\">",
-          ".hero-gradient { background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); }",
-          "<a href=\"#book\" class=\"bg-orange-500 text-white px-5 py-2 rounded-lg font-bold shadow-md hover:bg-orange-600 transition\">Book Now</a>"
+          "Please remove the 'Our Work' section and all service images."
         ]
       },
       "acceptanceCriteria": [
-        "Landing navigation remains sticky and visually matches the provided snippet (white background, shadow, underlined/italic brand, orange Book Now button).",
-        "Hero section uses the specified blue diagonal gradient background (not an image background).",
-        "Hero CTA buttons continue to link to WhatsApp (wa.me) and phone (tel:) using the existing number 8000262644."
+        "Landing page no longer renders the Our Work/gallery section",
+        "There are no remaining navigation/scroll targets or headings referencing “Our Work”"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Replace all remaining Gujarati user-facing text in the landing page sections with clear English equivalents while keeping the meaning (at minimum: Services section heading and service descriptions; ensure the hero tagline is English).",
+      "text": "Remove all service images and decorative iconography so the website is simple and text-based (e.g., remove any gallery images, remove service-card icons, and remove location-pin emojis/icons in the service areas list; keep CTAs as text).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "Use English for any user-facing text in the build request.",
-          "<p class=\"text-xl md:text-2xl mb-8 text-blue-100 font-medium\">અમદાવાદમાં સૌથી ફાસ્ટ અને વિશ્વાસપાત્ર એસી સર્વિસ</p>",
-          "<h2 class=\"text-3xl font-bold text-center mb-12 text-gray-800 underline underline-offset-8 decoration-blue-500\">અમારી સેવાઓ</h2>"
+          "Please remove the 'Our Work' section and all service images.",
+          "Keep the website simple and text-based."
         ]
       },
       "acceptanceCriteria": [
-        "No Gujarati text remains visible anywhere in the rendered landing page UI.",
-        "Services section content is fully in English (section title + each service description).",
-        "Hero tagline is English and communicates the same meaning as the Gujarati line (fast + trusted AC service in Ahmedabad)."
+        "No <img> elements remain in any service-related sections (including any gallery/work examples)",
+        "Services section displays titles/descriptions without icons",
+        "Service Areas section displays plain text area names without emoji/icon prefixes",
+        "Hero/CTA buttons/links render without decorative icons (text-only CTAs remain functional)"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Update the Service Areas section to list exactly these locations (and no others): Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Update the service areas to include: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Service Areas section contains only the specified areas and removes previously listed areas not in the user’s list",
+        "User-facing text remains in English",
+        "“Gandhinagar (All Sectors)” appears exactly as written"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Update any coverage/summary text that enumerates service locations (e.g., the coverage section paragraph) to align with the updated Service Areas list and to avoid mentioning removed locations.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "Update the service areas to include: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Coverage/summary section does not mention any locations that are not in the new Service Areas list",
+        "Coverage/summary section still clearly states service availability in Ahmedabad and Gandhinagar (All Sectors)"
       ]
     }
   ],
   "constraints": [
-    "Do not add external CDN dependencies (e.g., Tailwind CDN or Font Awesome CDN); use the existing Tailwind setup and existing icon libraries already in the project.",
-    "Do not modify files under frontend/src/components/ui (read-only shadcn/ui sources)."
+    "Do not modify files under frontend.immutablePaths (compose existing hooks/components instead of editing them).",
+    "Keep changes limited to simplifying the landing page and updating the service-area content; no backend changes."
   ],
   "nonGoals": [
-    "Fixing ICP deployment/build pipeline errors (not requested with actionable details).",
-    "Adding new backend features or persistence; keep this as a marketing/landing UI change only."
+    "Adding new landing page sections or new media/image galleries",
+    "Introducing new authentication flows or backend data models",
+    "Adding external integrations or third-party APIs"
   ],
   "imageRequirements": {
     "required": [],

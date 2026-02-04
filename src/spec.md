@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Update the React landing page’s nav/hero styling to match the provided HTML design and translate all remaining Gujarati UI text to English.
+**Goal:** Simplify the landing page to be fully text-based and update the Service Areas content to the new approved list.
 
 **Planned changes:**
-- Restyle the top navigation to match the provided snippet: sticky white bar with shadow, bold/underlined/italic brand title, and an orange “Book Now” button.
-- Update the hero section to use the specified blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6) with centered heading and CTA buttons.
-- Ensure hero CTA buttons continue to link to WhatsApp (wa.me) and phone (tel:) using the existing number 8000262644.
-- Replace all remaining Gujarati user-facing text across landing sections (including hero tagline and Services section heading/descriptions) with clear English equivalents preserving the meaning.
+- Remove the “Our Work” section from the landing page, including any headings, links, or scroll/navigation targets that reference it.
+- Remove all service-related images and decorative iconography across the landing page (e.g., gallery/work images, service-card icons, location-pin emojis/icons, and decorative icons in CTAs), keeping CTAs functional as text-only.
+- Update the Service Areas section to list exactly: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).
+- Update any coverage/summary text that mentions service locations so it aligns with the updated Service Areas list and does not reference removed locations.
 
-**User-visible outcome:** The landing page displays the updated nav and gradient hero design, and all visible text is in English with working WhatsApp/phone CTAs to 8000262644.
+**User-visible outcome:** The landing page displays a simplified, text-only experience with no “Our Work” section, no service images/icons, and an updated Service Areas list and related coverage text matching the specified locations.

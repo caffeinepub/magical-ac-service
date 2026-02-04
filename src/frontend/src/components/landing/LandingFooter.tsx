@@ -1,5 +1,3 @@
-import { Phone } from 'lucide-react';
-import { SiWhatsapp } from 'react-icons/si';
 import { Heart } from 'lucide-react';
 
 export default function LandingFooter() {
@@ -12,19 +10,17 @@ export default function LandingFooter() {
       <div className="flex justify-center gap-4 mb-8">
         <a
           href="tel:+918000262644"
-          className="bg-service-blue p-4 rounded-full hover:opacity-90 transition"
-          aria-label="Call us"
+          className="bg-service-blue px-6 py-3 rounded-full hover:opacity-90 transition font-semibold"
         >
-          <Phone className="w-5 h-5" />
+          Call Us
         </a>
         <a
           href="https://wa.me/918000262644"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 p-4 rounded-full hover:opacity-90 transition"
-          aria-label="WhatsApp us"
+          className="bg-green-500 px-6 py-3 rounded-full hover:opacity-90 transition font-semibold"
         >
-          <SiWhatsapp className="text-xl" />
+          WhatsApp
         </a>
       </div>
       <div className="border-t border-gray-800 pt-6 px-4">

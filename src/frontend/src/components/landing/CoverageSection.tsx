@@ -6,8 +6,9 @@ export default function CoverageSection() {
           Service Across Ahmedabad and Gandhinagar
         </h3>
         <p className="text-foreground max-w-2xl mx-auto">
-          Home visits available in Nikol, Naroda, Bapunagar, Bopal, Prahladnagar,
-          Chandkheda, and every sector of Gandhinagar.
+          Home visits available in Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, 
+          Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, 
+          Science City, and Gandhinagar (All Sectors).
         </p>
       </div>
     </section>

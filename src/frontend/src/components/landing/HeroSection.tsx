@@ -1,6 +1,3 @@
-import { SiWhatsapp } from 'react-icons/si';
-import { Phone } from 'lucide-react';
-
 export default function HeroSection() {
   return (
     <section
@@ -20,16 +17,14 @@ export default function HeroSection() {
           href="https://wa.me/918000262644?text=Hi, I want to book AC Service"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-green-600 transition transform hover:scale-105 flex items-center gap-2"
+          className="bg-green-500 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-green-600 transition transform hover:scale-105"
         >
-          <SiWhatsapp className="text-2xl" />
           WhatsApp Booking
         </a>
         <a
           href="tel:+918000262644"
-          className="bg-white text-blue-800 px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-gray-100 transition flex items-center gap-2"
+          className="bg-white text-blue-800 px-8 py-4 rounded-full text-lg font-bold shadow-lg hover:bg-gray-100 transition"
         >
-          <Phone className="w-5 h-5" />
           Call: 80002 62644
         </a>
       </div>

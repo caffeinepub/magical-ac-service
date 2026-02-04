@@ -1,7 +1,6 @@
 import LandingNav from './LandingNav';
 import HeroSection from './HeroSection';
 import ServicesSection from './ServicesSection';
-import OurWorkSection from './OurWorkSection';
 import CoverageSection from './CoverageSection';
 import ServiceAreasSection from '../ServiceAreasSection';
 import BookingSection from './BookingSection';
@@ -14,7 +13,6 @@ export default function LandingPage() {
       <LandingNav />
       <HeroSection />
       <ServicesSection />
-      <OurWorkSection />
       <CoverageSection />
       <ServiceAreasSection />
       <BookingSection />

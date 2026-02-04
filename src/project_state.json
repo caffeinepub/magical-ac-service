@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 43,
-  "summary": "Marketing/landing website for “Magical AC Service” (Gujarati) built as a static HTML + Tailwind UI with sections for hero, services, service areas (Ahmedabad & Gandhinagar), booking CTA/form that sends a prefilled WhatsApp message, and contact CTAs (WhatsApp + phone).",
+  "projectStateVersion": 47,
+  "summary": "ICP dapp scaffold (Motoko + React/Vite/Tailwind + shadcn/ui + Internet Identity hooks) being used to build a simple, mostly text-based Gujarati marketing/landing website for “Magical AC Service” (AC repair/service in Ahmedabad & Gandhinagar), including services, service areas, booking CTA, and WhatsApp/call actions; user now wants to remove the Our Work/gallery section and strip service images while updating the service-area list.",
   "existing_features": [
     {
       "id": "IF-1",
@@ -139,23 +139,46 @@
       "version": 1
     },
     {
-      "id": "feature-update-the-react-landing-page-styling-to-match-the-provided-html-snippet-s-look-and-feel-for-the-top-navigation-and-hero-section-keep-the-sticky-white-nav-with-a-bold-underlined-italic-brand-title-and-an-orange-book-now-button-and-update-the-hero-section-to-use-a-blue-diagonal-gradient-background-linear-gradient-135deg-from-1e3a8a-to-3b82f6-with-centered-heading-and-cta-buttons-for-whatsapp-and-phone",
-      "title": "Update the React landing page styling to match the provided HTML snippet’s look and feel for the top navigation and hero section: keep the sticky white nav with a bold/underlined/italic brand title and an orange “Book Now” button, and update the hero section to use a blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6) with centered heading and CTA buttons for WhatsApp and phone.",
+      "id": "feature-remove-the-our-work-section-from-the-landing-page-so-it-is-no-longer-displayed-anywhere",
+      "title": "Remove the “Our Work” section from the landing page so it is no longer displayed anywhere.",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-replace-all-remaining-gujarati-user-facing-text-in-the-landing-page-sections-with-clear-english-equivalents-while-keeping-the-meaning-at-minimum-services-section-heading-and-service-descriptions-ensure-the-hero-tagline-is-english",
-      "title": "Replace all remaining Gujarati user-facing text in the landing page sections with clear English equivalents while keeping the meaning (at minimum: Services section heading and service descriptions; ensure the hero tagline is English).",
+      "id": "feature-remove-all-service-images-and-decorative-iconography-so-the-website-is-simple-and-text-based-e-g-remove-any-gallery-images-remove-service-card-icons-and-remove-location-pin-emojis-icons-in-the-service-areas-list-keep-ctas-as-text",
+      "title": "Remove all service images and decorative iconography so the website is simple and text-based (e.g., remove any gallery images, remove service-card icons, and remove location-pin emojis/icons in the service areas list; keep CTAs as text).",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-service-areas-section-to-list-exactly-these-locations-and-no-others-hanspura-shahibaug-new-shahibaug-nana-chiloda-nikol-naroda-bapunagar-odhav-satellite-prahladnagar-bopal-gota-science-city-and-gandhinagar-all-sectors",
+      "title": "Update the Service Areas section to list exactly these locations (and no others): Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-any-coverage-summary-text-that-enumerates-service-locations-e-g-the-coverage-section-paragraph-to-align-with-the-updated-service-areas-list-and-to-avoid-mentioning-removed-locations",
+      "title": "Update any coverage/summary text that enumerates service locations (e.g., the coverage section paragraph) to align with the updated Service Areas list and to avoid mentioning removed locations.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
     }
   ],
-  "new_feature_requests": [],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Simplify landing page: remove 'Our Work' section and remove all service images; update Service Areas list to specified Ahmedabad/Gandhinagar areas; keep site simple and text-based.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
   "architectural_notes": [
     "Frontend uses React + Vite + Tailwind with shadcn/ui component primitives.",
     "Authentication is handled via Internet Identity with frontend hooks to create/use an authenticated actor.",
@@ -168,9 +191,7 @@
     "Landing page now includes an additional OurWorkSection component as part of the composed marketing/landing UI.",
     "Core infrastructure/template sync update (component:core-infrastructure:v1.0.2) touching backend, build-template, and frontend config/tooling; no new functional surface area tracked beyond maintenance/version alignment."
   ],
-  "known_issues": [
-    "Deployment encountered an error after updating the Service Areas section (deployment error reported)."
-  ],
+  "known_issues": [],
   "isFixRequest": false,
   "gameProjectType": "none",
   "projectName": "Magical AC Service",

@@ -2,11 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-react-landing-page-styling-to-match-the-provided-html-snippet-s-look-and-feel-for-the-top-navigation-and-hero-section-keep-the-sticky-white-nav-with-a-bold-underlined-italic-brand-title-and-an-orange-book-now-button-and-update-the-hero-section-to-use-a-blue-diagonal-gradient-background-linear-gradient-135deg-from-1e3a8a-to-3b82f6-with-centered-heading-and-cta-buttons-for-whatsapp-and-phone",
-      "featureTitle": "Update the React landing page styling to match the provided HTML snippet’s look and feel for the top navigation and hero section: keep the sticky white nav with a bold/underlined/italic brand title and an orange “Book Now” button, and update the hero section to use a blue diagonal gradient background (linear-gradient 135deg from #1e3a8a to #3b82f6) with centered heading and CTA buttons for WhatsApp and phone.",
+      "featureId": "feature-remove-the-our-work-section-from-the-landing-page-so-it-is-no-longer-displayed-anywhere",
+      "featureTitle": "Remove the “Our Work” section from the landing page so it is no longer displayed anywhere.",
       "files": [
-        "frontend/src/components/landing/HeroSection.tsx",
-        "frontend/src/components/landing/LandingNav.tsx"
+        "frontend/src/components/landing/LandingPage.tsx",
+        "frontend/src/components/landing/OurWorkSection.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -21,10 +21,12 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-replace-all-remaining-gujarati-user-facing-text-in-the-landing-page-sections-with-clear-english-equivalents-while-keeping-the-meaning-at-minimum-services-section-heading-and-service-descriptions-ensure-the-hero-tagline-is-english",
-      "featureTitle": "Replace all remaining Gujarati user-facing text in the landing page sections with clear English equivalents while keeping the meaning (at minimum: Services section heading and service descriptions; ensure the hero tagline is English).",
+      "featureId": "feature-remove-all-service-images-and-decorative-iconography-so-the-website-is-simple-and-text-based-e-g-remove-any-gallery-images-remove-service-card-icons-and-remove-location-pin-emojis-icons-in-the-service-areas-list-keep-ctas-as-text",
+      "featureTitle": "Remove all service images and decorative iconography so the website is simple and text-based (e.g., remove any gallery images, remove service-card icons, and remove location-pin emojis/icons in the service areas list; keep CTAs as text).",
       "files": [
+        "frontend/src/components/landing/FloatingWhatsAppButton.tsx",
         "frontend/src/components/landing/HeroSection.tsx",
+        "frontend/src/components/landing/LandingFooter.tsx",
         "frontend/src/components/landing/ServicesSection.tsx"
       ],
       "components": [
@@ -36,6 +38,42 @@
       ],
       "testIds": [
         "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-service-areas-section-to-list-exactly-these-locations-and-no-others-hanspura-shahibaug-new-shahibaug-nana-chiloda-nikol-naroda-bapunagar-odhav-satellite-prahladnagar-bopal-gota-science-city-and-gandhinagar-all-sectors",
+      "featureTitle": "Update the Service Areas section to list exactly these locations (and no others): Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).",
+      "files": [
+        "frontend/src/components/ServiceAreasSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-any-coverage-summary-text-that-enumerates-service-locations-e-g-the-coverage-section-paragraph-to-align-with-the-updated-service-areas-list-and-to-avoid-mentioning-removed-locations",
+      "featureTitle": "Update any coverage/summary text that enumerates service locations (e.g., the coverage section paragraph) to align with the updated Service Areas list and to avoid mentioning removed locations.",
+      "files": [
+        "frontend/src/components/landing/CoverageSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
       ],
       "confidence": "high"
     }
