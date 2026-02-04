@@ -1,0 +1,6 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the ServiceAreasSection component as the primary content.",
+  "frontend/src/components/ServiceAreasSection.tsx": "Service areas section component displaying 8 Ahmedabad localities in a responsive grid with orange/blue accent borders and a discount note.",
+  "frontend/src/index.css": "Global styles with Tailwind directives, OKLCH color system tokens for light/dark modes, and custom service section color variables.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended color palette including custom service section colors (light, primary, orange, blue) mapped to CSS variables."
+}

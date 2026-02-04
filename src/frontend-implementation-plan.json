@@ -1,0 +1,81 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Responsive Ahmedabad Service Areas section with discount note",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add a new Service Areas section component with the specified centered container, responsive 8-card grid, and footnote line.",
+      "acceptanceCriteria": [
+        "The section renders with padding similar to `py-12` and a light blue background similar to `bg-blue-50`.",
+        "The content is centered in a max-width container with horizontal padding (e.g., `container mx-auto px-4`) and `text-center` alignment.",
+        "A responsive grid renders with `grid-cols-2` on small screens and `md:grid-cols-4` on medium and larger screens, with consistent gaps similar to `gap-6`.",
+        "Exactly 8 cards are displayed, each styled with a white background, rounded corners, subtle shadow, and a left border accent similar to `border-l-4`."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "create",
+          "description": "Create a React + TypeScript section component implementing the required structure: section wrapper (py-12, light-blue background), centered container with headline, responsive 8-item grid (2 cols mobile, 4 cols md+), and a footnote line below the grid."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app root component to render the new ServiceAreasSection so the section is not orphaned and appears in the UI."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Ensure all user-facing text in the section is in English while preserving meaning and keeping locality names exactly as provided.",
+      "acceptanceCriteria": [
+        "The headline is in English and communicates: \"Our special service in these areas of Ahmedabad\" (or equivalent meaning), and uses emphasis similar to `text-3xl font-bold ... italic`.",
+        "The footnote is in English and communicates: \"Special discount available for customers in Hanspura and Nana Chiloda\" (or equivalent meaning) and is styled similarly to `mt-8 text-gray-600 font-medium`.",
+        "Area card labels match the provided list: \"Hanspura (હંસપુરા)\", \"Shahibaug (શાહીબાગ)\", \"New Shahibaug\", \"Nana Chiloda\", \"Nikol (નિકોલ)\", \"Naroda (નરોડા)\", \"Bapunagar\", \"Gandhinagar\"."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Set the headline and footnote to English equivalents (preserving meaning) and ensure the 8 area labels exactly match the provided spellings, including parenthetical Gujarati where present."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Apply the required orange/blue left-border grouping for cards and keep card typography consistent across all areas.",
+      "acceptanceCriteria": [
+        "Cards 1–4 (Hanspura, Shahibaug, New Shahibaug, Nana Chiloda) have an orange left border accent.",
+        "Cards 5–8 (Nikol, Naroda, Bapunagar, Gandhinagar) have a blue left border accent.",
+        "Each card displays its area name with bold styling similar to `font-bold text-lg`."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Implement deterministic styling so the first four cards use an orange left border accent and the last four use a blue left border accent, while keeping card title typography consistent (bold, text-lg) for all cards."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Enforce a coherent, consistent visual theme for the section aligned with the blue/orange accent direction without adding unrelated UI features.",
+      "acceptanceCriteria": [
+        "The section uses a consistent palette and type scale aligned with the provided Tailwind classes (light blue background, blue headline text, orange/blue accents on cards).",
+        "No additional product features (forms, authentication, new pages) are introduced as part of styling work."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Refine Tailwind styling to keep spacing, typography, and card treatments consistent across the whole section (headline color/weight/italics, grid spacing, card padding/shadow/rounded corners) while staying aligned with the blue/orange accent direction and avoiding any new features."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add the Tailwind CSS entry file (Tailwind directives and any minimal global defaults needed by the app) so the section styling renders correctly with Tailwind."
+        }
+      ]
+    }
+  ]
+}

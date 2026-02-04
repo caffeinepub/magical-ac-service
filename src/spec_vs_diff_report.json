@@ -1,0 +1,49 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-04T12:37:45.236Z",
+  "summary": "The Service Areas section component is implemented with the required responsive 8-card grid, English headline/footnote, and orange/blue accent grouping. However, the diff also introduces unrequested backend and Internet Identity/auth + actor/query infrastructure, which conflicts with stated non-goals.",
+  "missing_requirements": [],
+  "hallucinated_features": [
+    {
+      "description": "Added Internet Identity authentication context/provider and related login/identity management hooks, despite non-goal explicitly disallowing Internet Identity auth.",
+      "reason": "BuildRequest non-goals include \"Adding Internet Identity authentication\"; diff introduces InternetIdentityProvider and useInternetIdentity hook and wires it into the app root.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    },
+    {
+      "description": "Added actor-creation/query layer using React Query for backend actor management.",
+      "reason": "Not requested by any REQ; the BuildRequest is only about a frontend section UI and explicitly excludes backend/API work for service areas.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/main.tsx"
+      ]
+    },
+    {
+      "description": "Added a backend canister file (empty actor).",
+      "reason": "Backend work is outside the requested scope (frontend section only) and explicitly a non-goal to add backend data storage/APIs for service areas.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "confidence": 0.86,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/ServiceAreasSection.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

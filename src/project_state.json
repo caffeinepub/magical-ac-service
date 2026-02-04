@@ -1,0 +1,55 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a website section (Gujarati) highlighting special service areas in Ahmedabad, with a grid of localities and a discount note for specific areas.",
+  "existing_features": [
+    {
+      "id": "feature-create-a-new-frontend-section-component-that-matches-the-provided-html-structure-and-tailwind-styling-a-centered-container-with-a-headline-a-responsive-grid-of-8-area-cards-2-columns-on-mobile-4-columns-on-md-and-a-footnote-line-below-the-grid",
+      "title": "Create a new frontend section component that matches the provided HTML structure and Tailwind styling: a centered container with a headline, a responsive grid of 8 area cards (2 columns on mobile, 4 columns on md+), and a footnote line below the grid.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-use-english-for-all-user-facing-text-in-this-section-while-preserving-the-same-meaning-as-the-provided-gujarati-content-including-the-headline-and-discount-note-and-keep-the-locality-names-as-shown-including-any-parenthetical-gujarati-where-present",
+      "title": "Use English for all user-facing text in this section while preserving the same meaning as the provided Gujarati content, including the headline and discount note, and keep the locality names as shown (including any parenthetical Gujarati where present).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-the-same-visual-grouping-indicated-by-the-provided-markup-the-first-four-cards-use-an-orange-left-border-accent-and-the-last-four-cards-use-a-blue-left-border-accent-and-keep-typography-consistent-e-g-bold-text-lg-across-all-cards",
+      "title": "Apply the same visual grouping indicated by the provided markup: the first four cards use an orange left border accent and the last four cards use a blue left border accent, and keep typography consistent (e.g., bold, `text-lg`) across all cards.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-one-coherent-visual-theme-for-this-section-and-enforce-it-consistently-colors-typography-spacing-and-card-styling-staying-aligned-with-the-provided-blue-orange-accent-direction-without-introducing-unrelated-new-ui-elements-or-features",
+      "title": "Add one coherent visual theme for this section and enforce it consistently (colors, typography, spacing, and card styling), staying aligned with the provided blue/orange accent direction without introducing unrelated new UI elements or features.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add a Gujarati website section showing special service areas in Ahmedabad as a responsive grid (2 cols mobile, 4 cols md+) with highlighted cards and a discount note for Hanspura and Nana Chiloda.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "architectural_notes": [
+    "Use Tailwind CSS utility classes for responsive layout and styling of the service-areas section."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "projectName": "Add a responsive Service Areas section (Ahmedabad) with discount note",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

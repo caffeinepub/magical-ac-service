@@ -1,0 +1,90 @@
+{
+  "kind": "build_request",
+  "title": "Add a responsive Service Areas section (Ahmedabad) with discount note",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a new frontend section component that matches the provided HTML structure and Tailwind styling: a centered container with a headline, a responsive grid of 8 area cards (2 columns on mobile, 4 columns on md+), and a footnote line below the grid.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "<section class=\"py-12 bg-blue-50\"> ... </section>"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The section renders with padding similar to `py-12` and a light blue background similar to `bg-blue-50`.",
+        "The content is centered in a max-width container with horizontal padding (e.g., `container mx-auto px-4`) and `text-center` alignment.",
+        "A responsive grid renders with `grid-cols-2` on small screens and `md:grid-cols-4` on medium and larger screens, with consistent gaps similar to `gap-6`.",
+        "Exactly 8 cards are displayed, each styled with a white background, rounded corners, subtle shadow, and a left border accent similar to `border-l-4`."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Use English for all user-facing text in this section while preserving the same meaning as the provided Gujarati content, including the headline and discount note, and keep the locality names as shown (including any parenthetical Gujarati where present).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Use English for any user-facing text in the build request."
+        ]
+      },
+      "acceptanceCriteria": [
+        "The headline is in English and communicates: \"Our special service in these areas of Ahmedabad\" (or equivalent meaning), and uses emphasis similar to `text-3xl font-bold ... italic`.",
+        "The footnote is in English and communicates: \"Special discount available for customers in Hanspura and Nana Chiloda\" (or equivalent meaning) and is styled similarly to `mt-8 text-gray-600 font-medium`.",
+        "Area card labels match the provided list: \"Hanspura (હંસપુરા)\", \"Shahibaug (શાહીબાગ)\", \"New Shahibaug\", \"Nana Chiloda\", \"Nikol (નિકોલ)\", \"Naroda (નરોડા)\", \"Bapunagar\", \"Gandhinagar\"."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Apply the same visual grouping indicated by the provided markup: the first four cards use an orange left border accent and the last four cards use a blue left border accent, and keep typography consistent (e.g., bold, `text-lg`) across all cards.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "border-l-4 border-orange-500",
+          "border-l-4 border-blue-500"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Cards 1–4 (Hanspura, Shahibaug, New Shahibaug, Nana Chiloda) have an orange left border accent.",
+        "Cards 5–8 (Nikol, Naroda, Bapunagar, Gandhinagar) have a blue left border accent.",
+        "Each card displays its area name with bold styling similar to `font-bold text-lg`."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Add one coherent visual theme for this section and enforce it consistently (colors, typography, spacing, and card styling), staying aligned with the provided blue/orange accent direction without introducing unrelated new UI elements or features.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The section uses a consistent palette and type scale aligned with the provided Tailwind classes (light blue background, blue headline text, orange/blue accents on cards).",
+        "No additional product features (forms, authentication, new pages) are introduced as part of styling work."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text in the implemented section (area names can remain as provided, including parenthetical Gujarati).",
+    "Frontend must use React + TypeScript with Tailwind styling."
+  ],
+  "nonGoals": [
+    "Adding backend data storage or APIs for service areas",
+    "Adding Internet Identity authentication",
+    "Adding booking, checkout, or contact form flows"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
