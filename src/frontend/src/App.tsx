@@ -1,11 +1,7 @@
-import ServiceAreasSection from './components/ServiceAreasSection';
+import LandingPage from './components/landing/LandingPage';
 
 function App() {
-  return (
-    <div className="min-h-screen">
-      <ServiceAreasSection />
-    </div>
-  );
+  return <LandingPage />;
 }
 
 export default App;

@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Add a responsive “Service Areas” section for Ahmedabad that matches the provided layout/styling, with English headline/footnote and the specified area names.
+**Goal:** Add a new “Our Work” gallery section to the landing page to showcase example AC cleaning work.
 
 **Planned changes:**
-- Create a new React + TypeScript section component styled with Tailwind: light blue background, centered container, headline, grid of 8 area cards, and a footnote line.
-- Implement a responsive grid layout (2 columns on small screens, 4 columns on md+) with consistent spacing and card styling (white, rounded, subtle shadow, left border accent).
-- Populate exactly 8 cards with the provided area labels (including parenthetical Gujarati where shown), using consistent bold typography.
-- Apply visual grouping: first four cards with an orange left border accent; last four cards with a blue left border accent; keep an overall coherent blue/orange theme.
+- Create a new landing-page section component for an “Our Work” image-card gallery under `frontend/src/components/landing/...`.
+- Insert the new gallery section into `LandingPage` so it renders after `ServicesSection` and before `CoverageSection`.
+- Implement a responsive image-card grid (1 column mobile, 2 on small screens, 3 on large screens) with consistent image cropping, meaningful alt text, and hover effects (image zoom + increased card shadow).
+- Seed the gallery with at least 3 static items, including one using the provided Unsplash image URL, with English heading/subtitle and English card titles/descriptions.
 
-**User-visible outcome:** Users see a neatly styled, responsive Ahmedabad Service Areas section listing eight localities with a discount note for Hanspura and Nana Chiloda.
+**User-visible outcome:** Visitors to the landing page see an “Our Work” section between Services and Coverage, featuring a responsive grid of example work cards with images and subtle hover animations.
