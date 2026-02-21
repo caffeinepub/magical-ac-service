@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Simplify the landing page to be fully text-based and update the Service Areas content to the new approved list.
+**Goal:** Fix the blank white page issue in the draft tab so the water jet service landing page displays correctly.
 
 **Planned changes:**
-- Remove the “Our Work” section from the landing page, including any headings, links, or scroll/navigation targets that reference it.
-- Remove all service-related images and decorative iconography across the landing page (e.g., gallery/work images, service-card icons, location-pin emojis/icons, and decorative icons in CTAs), keeping CTAs functional as text-only.
-- Update the Service Areas section to list exactly: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).
-- Update any coverage/summary text that mentions service locations so it aligns with the updated Service Areas list and does not reference removed locations.
+- Diagnose and resolve the root cause preventing the draft tab from rendering the landing page
+- Verify all React components are properly exported and imported throughout the component tree
+- Ensure all required assets (fonts, images, audio files) load correctly without errors
+- Validate Tailwind CSS classes and styling are applied correctly without causing layout issues
 
-**User-visible outcome:** The landing page displays a simplified, text-only experience with no “Our Work” section, no service images/icons, and an updated Service Areas list and related coverage text matching the specified locations.
+**User-visible outcome:** The draft tab will display the complete water jet service landing page with all sections visible (navigation, hero, services, booking form, footer) and functioning properly in all three languages (Gujarati, Hindi, English).

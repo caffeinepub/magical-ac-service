@@ -1,200 +1,52 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 47,
-  "summary": "ICP dapp scaffold (Motoko + React/Vite/Tailwind + shadcn/ui + Internet Identity hooks) being used to build a simple, mostly text-based Gujarati marketing/landing website for “Magical AC Service” (AC repair/service in Ahmedabad & Gandhinagar), including services, service areas, booking CTA, and WhatsApp/call actions; user now wants to remove the Our Work/gallery section and strip service images while updating the service-area list.",
+  "projectStateVersion": 3,
+  "summary": "Water Jet Service website with multi-language support (Gujarati, Hindi, English), animated buttons, modern design, and SEO optimization for multiple locations in Ahmedabad",
+  "architectural_notes": [
+    "Multi-language website (Gujarati, Hindi, English) with language switcher",
+    "Animated buttons with vibration and glow/shine effects",
+    "SEO optimized for locations: નિકોલ, નરોડા, હનસપુરા, નાના ચિલોડા, બાપુનગર, વસ્ત્રાલ, કથવાડા, કુબેરનગર, ઓઢવ, મણીનગર, કૃષ્ણનગર",
+    "Water Jet Service and Water Jet Foam Service offerings"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
   "existing_features": [
     {
-      "id": "IF-1",
-      "title": "Motoko backend canister scaffold",
-      "synonyms": [
-        "backend canister",
-        "Motoko canister"
-      ],
-      "description": "Initial Motoko backend canister structure and build configuration for ICP deployment.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-2",
-      "title": "React + Vite + Tailwind frontend scaffold",
-      "synonyms": [
-        "frontend app",
-        "Vite React template"
-      ],
-      "description": "Frontend application bootstrapped with React, Vite, Tailwind CSS, and project configuration files.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-3",
-      "title": "shadcn/ui component library integrated",
-      "synonyms": [
-        "shadcn components",
-        "UI component kit"
-      ],
-      "description": "shadcn/ui component set added to the frontend (multiple UI primitives) with supporting config.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-4",
-      "title": "Internet Identity authentication hooks",
-      "synonyms": [
-        "II auth",
-        "Internet Identity login"
-      ],
-      "description": "Frontend hooks and utilities for Internet Identity authentication (e.g., actor setup and II provider checks).",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-5",
-      "title": "Frontend-backend actor/declarations wiring",
-      "synonyms": [
-        "backend.did bindings",
-        "actor client"
-      ],
-      "description": "Generated/added backend DID declarations and TypeScript actor wiring to call the backend from the frontend.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-6",
-      "title": "Storage client utility for frontend persistence",
-      "synonyms": [
-        "StorageClient",
-        "client-side storage"
-      ],
-      "description": "Utility module for managing storage/persistence concerns from the frontend.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-7",
-      "title": "Initial UI section: Service Areas component",
-      "synonyms": [
-        "ServiceAreasSection"
-      ],
-      "description": "Initial app UI includes a ServiceAreasSection component as part of the React app composition.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-8",
-      "title": "Build/deploy template and scripts for ICP",
-      "synonyms": [
-        "build template",
-        "deploy scripts"
-      ],
-      "description": "Added build-template assets (Dockerfile, deploy.sh, icp.yaml, workspace config, image scripts) to standardize building and deployment.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-9",
-      "title": "Initial landing page UI (multi-section) with WhatsApp CTA",
-      "synonyms": [
-        "LandingPage",
-        "landing sections",
-        "marketing page"
-      ],
-      "description": "Added a composed LandingPage with multiple sections/components (LandingNav, HeroSection, ServicesSection, CoverageSection, BookingSection, LandingFooter) and a FloatingWhatsAppButton CTA, integrated into the main App.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-10",
-      "title": "Enhanced build-template frontend tooling and UI primitives",
-      "synonyms": [
-        "build-template updates",
-        "template lint rules",
-        "template shadcn expansion"
-      ],
-      "description": "Build-template updated with a broader set of shadcn/ui primitives, custom ESLint rules (e.g., Internet Identity provider requirement, no BigInt in query keys), and supporting scripts/utilities for standardized frontend builds.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-11",
-      "title": "GitHub export / ICP CLI-friendly build support",
-      "synonyms": [
-        "github export icp cli",
-        "component:github-export-icp-cli",
-        "icp-cli build compatibility"
-      ],
-      "description": "Project/build-template updated with additional build metadata and scripts (e.g., build.sh, build-request/spec artifacts) to support standardized exports and ICP CLI-friendly build/deploy workflows.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "IF-12",
-      "title": "Landing page section: Our Work component",
-      "synonyms": [
-        "OurWorkSection",
-        "portfolio section",
-        "work showcase"
-      ],
-      "description": "Added an OurWorkSection component to the landing page section set to showcase previous work/examples as part of the LandingPage composition.",
-      "reqIds": [],
-      "version": 1
-    },
-    {
-      "id": "feature-remove-the-our-work-section-from-the-landing-page-so-it-is-no-longer-displayed-anywhere",
-      "title": "Remove the “Our Work” section from the landing page so it is no longer displayed anywhere.",
+      "id": "feature-diagnose-and-fix-the-issue-causing-the-draft-tab-to-display-a-completely-blank-white-page-instead-of-showing-the-application-content",
+      "title": "Diagnose and fix the issue causing the draft tab to display a completely blank white page instead of showing the application content",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-remove-all-service-images-and-decorative-iconography-so-the-website-is-simple-and-text-based-e-g-remove-any-gallery-images-remove-service-card-icons-and-remove-location-pin-emojis-icons-in-the-service-areas-list-keep-ctas-as-text",
-      "title": "Remove all service images and decorative iconography so the website is simple and text-based (e.g., remove any gallery images, remove service-card icons, and remove location-pin emojis/icons in the service areas list; keep CTAs as text).",
-      "reqIds": [
-        "REQ-2"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-the-service-areas-section-to-list-exactly-these-locations-and-no-others-hanspura-shahibaug-new-shahibaug-nana-chiloda-nikol-naroda-bapunagar-odhav-satellite-prahladnagar-bopal-gota-science-city-and-gandhinagar-all-sectors",
-      "title": "Update the Service Areas section to list exactly these locations (and no others): Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).",
+      "id": "feature-ensure-all-required-assets-fonts-images-audio-files-are-properly-loaded-and-accessible",
+      "title": "Ensure all required assets (fonts, images, audio files) are properly loaded and accessible",
       "reqIds": [
         "REQ-3"
-      ],
-      "version": 1
-    },
-    {
-      "id": "feature-update-any-coverage-summary-text-that-enumerates-service-locations-e-g-the-coverage-section-paragraph-to-align-with-the-updated-service-areas-list-and-to-avoid-mentioning-removed-locations",
-      "title": "Update any coverage/summary text that enumerates service locations (e.g., the coverage section paragraph) to align with the updated Service Areas list and to avoid mentioning removed locations.",
-      "reqIds": [
-        "REQ-4"
       ],
       "version": 1
     }
   ],
   "new_feature_requests": [
     {
-      "id": "AR-1",
-      "summary": "Simplify landing page: remove 'Our Work' section and remove all service images; update Service Areas list to specified Ahmedabad/Gandhinagar areas; keep site simple and text-based.",
-      "reqIds": [],
+      "id": "AR-2",
+      "summary": "Verify all React components are properly exported and imported in the component tree",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Validate that all styling and Tailwind CSS classes are correctly applied and not causing layout issues",
+      "reqIds": [
+        "REQ-4"
+      ],
       "status": "pending"
     }
   ],
-  "architectural_notes": [
-    "Frontend uses React + Vite + Tailwind with shadcn/ui component primitives.",
-    "Authentication is handled via Internet Identity with frontend hooks to create/use an authenticated actor.",
-    "Backend is a Motoko canister with TypeScript declarations generated/checked into the frontend for integration.",
-    "Project includes a reusable build-template (Docker/build scripts/config) to standardize ICP builds/deploys.",
-    "Initial app now includes a composed landing page built from dedicated section components (nav/hero/services/coverage/booking/footer) plus a floating WhatsApp CTA.",
-    "Build-template frontend includes custom ESLint rules to enforce Internet Identity integration patterns and prevent problematic query-key usage (e.g., BigInt).",
-    "Build-template includes standardized image/tooling scripts (e.g., resize/prune) as part of the reusable build pipeline.",
-    "Build system now includes additional build/export metadata and scripts (e.g., build.sh and build-request/spec artifacts) to support ICP CLI/GitHub export workflows.",
-    "Landing page now includes an additional OurWorkSection component as part of the composed marketing/landing UI.",
-    "Core infrastructure/template sync update (component:core-infrastructure:v1.0.2) touching backend, build-template, and frontend config/tooling; no new functional surface area tracked beyond maintenance/version alignment."
-  ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "gameProjectType": "none",
-  "projectName": "Magical AC Service",
+  "projectName": "Water Jet Service",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

@@ -1,88 +1,137 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Simplify landing page to text-only and update Service Areas",
+  "title": "Fix blank draft tab display issue",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Remove the Our Work section so it is no longer displayed anywhere on the landing page.",
+      "summary": "Diagnose and fix the issue causing the draft tab to display a completely blank white page instead of showing the application content",
       "acceptanceCriteria": [
-        "Landing page no longer renders the Our Work/gallery section",
-        "There are no remaining navigation/scroll targets or headings referencing “Our Work”"
+        "The draft tab loads and displays the complete landing page with all sections visible",
+        "All components (navigation, hero section, services, booking form, footer) render correctly",
+        "No console errors preventing page load",
+        "All three language options (Gujarati, Hindi, English) work properly"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "path": "frontend/src/main.tsx",
           "operation": "modify",
-          "description": "Remove the OurWorkSection import and remove its render from the landing page composition so it cannot appear anywhere in the landing flow."
+          "description": "Add error boundary and console error logging to catch and display any React rendering errors that might be causing the blank page. Verify that QueryClientProvider and InternetIdentityProvider are properly configured and not throwing silent errors during initialization."
         },
         {
-          "path": "frontend/src/components/landing/OurWorkSection.tsx",
-          "operation": "delete",
-          "description": "Delete the OurWorkSection implementation to ensure the gallery section (and its heading/scroll references) cannot be reintroduced or displayed."
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add error handling and fallback UI to catch any errors from LandingPage component. Add console logging to verify the component is mounting. Ensure the component returns valid JSX and is not returning null or undefined."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Add error boundaries around each section component and verify all child components are properly imported and rendered. Check that LanguageProvider context is available and not causing render failures. Add defensive checks for translation data access."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Verify the root div with id 'root' exists and is not being hidden by CSS. Add inline fallback content inside the root div that displays if React fails to mount, helping diagnose whether the issue is React-related or HTML-related."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Remove service images and decorative iconography to make service-related UI fully text-based while keeping CTAs functional.",
+      "summary": "Verify all React components are properly exported and imported in the component tree",
       "acceptanceCriteria": [
-        "No <img> elements remain in any service-related sections (including any gallery/work examples)",
-        "Services section displays titles/descriptions without icons",
-        "Service Areas section displays plain text area names without emoji/icon prefixes",
-        "Hero/CTA buttons/links render without decorative icons (text-only CTAs remain functional)"
+        "LandingPage component successfully renders all child sections",
+        "No missing component imports causing render failures",
+        "App.tsx correctly mounts the root component"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/ServicesSection.tsx",
+          "path": "frontend/src/components/landing/LandingPage.tsx",
           "operation": "modify",
-          "description": "Remove lucide-react icon imports and update the services data/rendering so cards show only service title and description (no icon components)."
+          "description": "Verify all section imports (LandingNav, HeroSection, ServicesSection, WaterJetFoamSection, SofaCleaningSection, OurWorkSection, CoverageSection, LocalSeoPhrasesSection, ServiceAreasSection, BookingSection, LandingFooter, FloatingWhatsAppButton) are using correct paths and exported properly. Add import validation checks."
         },
         {
           "path": "frontend/src/components/landing/HeroSection.tsx",
           "operation": "modify",
-          "description": "Remove decorative CTA icons (WhatsApp/Phone) and adjust CTA link content/styling so CTAs remain text-only and functional."
+          "description": "Verify component exports as default and check that all imports (useTranslation hook, IconBadge component) are correctly resolved. Ensure the component returns valid JSX with no syntax errors."
         },
         {
-          "path": "frontend/src/components/landing/FloatingWhatsAppButton.tsx",
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Replace the icon-only floating WhatsApp control with a text-only control (no decorative iconography) while keeping the WhatsApp link behavior unchanged."
+          "description": "Verify component exports correctly and all dependencies (translations, IconBadge) are properly imported and accessible. Check for any runtime errors in mapping service data."
         },
         {
-          "path": "frontend/src/components/landing/LandingFooter.tsx",
+          "path": "frontend/src/components/landing/BookingSection.tsx",
           "operation": "modify",
-          "description": "Remove decorative icons from footer call/WhatsApp shortcuts and any other iconography so footer actions are text-only links while preserving functionality."
+          "description": "Verify component exports and check that form state management and WhatsApp link generation logic don't contain errors that could break rendering."
+        },
+        {
+          "path": "frontend/src/i18n/LanguageProvider.tsx",
+          "operation": "modify",
+          "description": "Add error handling for localStorage access failures and ensure the provider always returns valid context values. Verify translations object is properly imported and accessible."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Update Service Areas to list exactly the specified locations and remove all other locations and any icon/emoji prefixes.",
+      "summary": "Ensure all required assets (fonts, images, audio files) are properly loaded and accessible",
       "acceptanceCriteria": [
-        "Service Areas section contains only the specified areas and removes previously listed areas not in the user’s list",
-        "User-facing text remains in English",
-        "“Gandhinagar (All Sectors)” appears exactly as written"
+        "Google Fonts for Gujarati/Hindi load successfully",
+        "Background images in hero section render correctly",
+        "Icon sound effects file loads without errors",
+        "All Font Awesome icons display properly"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Replace the existing area groups with a plain-text list containing exactly: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors); remove any 📍 or other icon/emoji prefixes and remove any extra locations."
+          "description": "Verify Google Fonts links for Noto Sans Gujarati and Noto Sans Devanagari are correct and loading. Check that Font Awesome CDN link is valid and not blocked. Add error handlers for font loading failures."
+        },
+        {
+          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Verify background image path references and ensure they resolve correctly. Check that gradient overlays and decorative blob elements are not causing layout issues. Ensure any missing images degrade gracefully without breaking the page."
+        },
+        {
+          "path": "frontend/src/hooks/useIconSound.ts",
+          "operation": "modify",
+          "description": "Verify audio file path is correct and add better error handling for cases where the audio file fails to load. Ensure audio loading failures don't prevent component rendering."
+        },
+        {
+          "path": "frontend/src/components/landing/IconBadge.tsx",
+          "operation": "modify",
+          "description": "Verify Font Awesome icon class names are correct and add fallback rendering if icons fail to load. Ensure the sound effect hook integration doesn't cause component failures."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Align coverage/summary text that enumerates locations with the updated Service Areas list and avoid mentioning removed locations.",
+      "summary": "Validate that all styling and Tailwind CSS classes are correctly applied and not causing layout issues",
       "acceptanceCriteria": [
-        "Coverage/summary section does not mention any locations that are not in the new Service Areas list",
-        "Coverage/summary section still clearly states service availability in Ahmedabad and Gandhinagar (All Sectors)"
+        "Glassmorphism effects render as intended",
+        "Gradient backgrounds display correctly",
+        "Responsive grid layouts function on different screen sizes",
+        "No CSS conflicts causing invisible content"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/landing/CoverageSection.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Update the coverage paragraph to reference only locations from the updated Service Areas list and ensure it clearly states availability across Ahmedabad and Gandhinagar (All Sectors) without mentioning removed areas."
+          "description": "Verify Tailwind directives are properly configured and CSS custom properties are defined correctly. Check that glassmorphism utility classes are not causing rendering issues. Ensure no CSS is hiding the root element or entire page."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Verify Tailwind configuration is valid and all custom colors, fonts, and utilities are properly defined. Check that the configuration doesn't contain syntax errors that could prevent CSS generation."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Verify gradient background classes are valid Tailwind classes and not causing layout issues. Check that the min-h-screen and flex layout don't hide content. Ensure glassmorphism classes are properly defined in the CSS."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingNav.tsx",
+          "operation": "modify",
+          "description": "Verify sticky positioning and glass panel styling don't interfere with content visibility. Check z-index values don't cause layering issues that hide page content."
         }
       ]
     }

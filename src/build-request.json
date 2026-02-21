@@ -1,89 +1,86 @@
 {
   "kind": "build_request",
-  "title": "Simplify landing page: remove Our Work and make content text-only; update service areas list",
-  "priority": "normal",
+  "title": "Fix blank draft tab display issue",
+  "projectName": "Water Jet Service",
+  "priority": "high",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Remove the “Our Work” section from the landing page so it is no longer displayed anywhere.",
+      "text": "Diagnose and fix the issue causing the draft tab to display a completely blank white page instead of showing the application content",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-last"
         ],
         "quotes": [
-          "Please remove the 'Our Work' section and all service images."
+          "Draft build kari aapjo je atki gyo che"
         ]
       },
       "acceptanceCriteria": [
-        "Landing page no longer renders the Our Work/gallery section",
-        "There are no remaining navigation/scroll targets or headings referencing “Our Work”"
+        "The draft tab loads and displays the complete landing page with all sections visible",
+        "All components (navigation, hero section, services, booking form, footer) render correctly",
+        "No console errors preventing page load",
+        "All three language options (Gujarati, Hindi, English) work properly"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Remove all service images and decorative iconography so the website is simple and text-based (e.g., remove any gallery images, remove service-card icons, and remove location-pin emojis/icons in the service areas list; keep CTAs as text).",
+      "text": "Verify all React components are properly exported and imported in the component tree",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Please remove the 'Our Work' section and all service images.",
-          "Keep the website simple and text-based."
+          "msg-last"
         ]
       },
       "acceptanceCriteria": [
-        "No <img> elements remain in any service-related sections (including any gallery/work examples)",
-        "Services section displays titles/descriptions without icons",
-        "Service Areas section displays plain text area names without emoji/icon prefixes",
-        "Hero/CTA buttons/links render without decorative icons (text-only CTAs remain functional)"
+        "LandingPage component successfully renders all child sections",
+        "No missing component imports causing render failures",
+        "App.tsx correctly mounts the root component"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Update the Service Areas section to list exactly these locations (and no others): Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors).",
+      "text": "Ensure all required assets (fonts, images, audio files) are properly loaded and accessible",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Update the service areas to include: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors)."
+          "msg-last"
         ]
       },
       "acceptanceCriteria": [
-        "Service Areas section contains only the specified areas and removes previously listed areas not in the user’s list",
-        "User-facing text remains in English",
-        "“Gandhinagar (All Sectors)” appears exactly as written"
+        "Google Fonts for Gujarati/Hindi load successfully",
+        "Background images in hero section render correctly",
+        "Icon sound effects file loads without errors",
+        "All Font Awesome icons display properly"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Update any coverage/summary text that enumerates service locations (e.g., the coverage section paragraph) to align with the updated Service Areas list and to avoid mentioning removed locations.",
+      "text": "Validate that all styling and Tailwind CSS classes are correctly applied and not causing layout issues",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
-        ],
-        "quotes": [
-          "Update the service areas to include: Hanspura, Shahibaug, New Shahibaug, Nana Chiloda, Nikol, Naroda, Bapunagar, Odhav, Satellite, Prahladnagar, Bopal, Gota, Science City, and Gandhinagar (All Sectors)."
+          "msg-last"
         ]
       },
       "acceptanceCriteria": [
-        "Coverage/summary section does not mention any locations that are not in the new Service Areas list",
-        "Coverage/summary section still clearly states service availability in Ahmedabad and Gandhinagar (All Sectors)"
+        "Glassmorphism effects render as intended",
+        "Gradient backgrounds display correctly",
+        "Responsive grid layouts function on different screen sizes",
+        "No CSS conflicts causing invisible content"
       ]
     }
   ],
   "constraints": [
-    "Do not modify files under frontend.immutablePaths (compose existing hooks/components instead of editing them).",
-    "Keep changes limited to simplifying the landing page and updating the service-area content; no backend changes."
+    "Do not modify the backend/main.mo file as it is not related to the frontend display issue",
+    "Preserve all existing functionality including multi-language support, animations, and SEO optimization",
+    "Maintain the current glassmorphism design aesthetic and color scheme"
   ],
   "nonGoals": [
-    "Adding new landing page sections or new media/image galleries",
-    "Introducing new authentication flows or backend data models",
-    "Adding external integrations or third-party APIs"
+    "Adding new features or sections to the website",
+    "Changing the visual design or color scheme",
+    "Modifying SEO keywords or meta tags",
+    "Adding new languages beyond the existing three"
   ],
   "imageRequirements": {
     "required": [],
