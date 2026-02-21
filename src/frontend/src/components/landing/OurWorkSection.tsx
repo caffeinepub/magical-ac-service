@@ -1,6 +1,6 @@
+import { useTranslation } from '@/i18n/useTranslation';
 import { FaCamera } from 'react-icons/fa';
 import IconBadge from './IconBadge';
-import { useTranslation } from '@/i18n/useTranslation';
 
 export default function OurWorkSection() {
   const { t } = useTranslation();
@@ -33,16 +33,14 @@ export default function OurWorkSection() {
   ];
 
   return (
-    <section className="py-16 glass-section-light">
+    <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-3 mb-4">
-            <IconBadge icon={FaCamera} size="md" />
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-gray-100">
-              {t.ourWork.heading}
-            </h2>
-          </div>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+          <IconBadge icon={FaCamera} variant="primary" size="lg" />
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            {t.ourWork.heading}
+          </h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto">
             {t.ourWork.description}
           </p>
         </div>
@@ -51,22 +49,36 @@ export default function OurWorkSection() {
           {workImages.map((image, index) => (
             <div
               key={index}
-              className="glass-card glass-hover overflow-hidden group"
+              className="glass-card overflow-hidden group cursor-pointer transform transition-all duration-300 hover:scale-105"
             >
-              <div className="relative aspect-video overflow-hidden">
+              <div className="aspect-video relative overflow-hidden">
                 <img
                   src={image.src}
                   alt={image.alt}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   loading="lazy"
+                  onError={(e) => {
+                    console.error(`Failed to load image: ${image.src}`);
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `
+                        <div style="display: flex; align-items: center; justify-content: center; height: 100%; background: #f3f4f6; color: #9ca3af;">
+                          <span>Image unavailable</span>
+                        </div>
+                      `;
+                    }
+                  }}
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             </div>
           ))}
         </div>
 
-        <div className="mt-10 text-center glass-panel p-6 max-w-3xl mx-auto">
-          <p className="text-gray-700 dark:text-gray-200 text-sm leading-relaxed">
+        <div className="mt-12 text-center">
+          <p className="text-base text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             {t.ourWork.footerText}
           </p>
         </div>

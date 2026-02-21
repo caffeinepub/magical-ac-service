@@ -1,47 +1,44 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "Water Jet Service website with multi-language support (Gujarati, Hindi, English), animated buttons, modern design, and SEO optimization for multiple locations in Ahmedabad",
-  "architectural_notes": [
-    "Multi-language website (Gujarati, Hindi, English) with language switcher",
-    "Animated buttons with vibration and glow/shine effects",
-    "SEO optimized for locations: નિકોલ, નરોડા, હનસપુરા, નાના ચિલોડા, બાપુનગર, વસ્ત્રાલ, કથવાડા, કુબેરનગર, ઓઢવ, મણીનગર, કૃષ્ણનગર",
-    "Water Jet Service and Water Jet Foam Service offerings"
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [
+    "Draft Version 27 shows blank page in preview - deployment may not have completed successfully"
   ],
-  "known_issues": [],
   "isFixRequest": true,
   "existing_features": [
     {
-      "id": "feature-diagnose-and-fix-the-issue-causing-the-draft-tab-to-display-a-completely-blank-white-page-instead-of-showing-the-application-content",
-      "title": "Diagnose and fix the issue causing the draft tab to display a completely blank white page instead of showing the application content",
+      "id": "feature-diagnose-and-fix-the-blank-page-issue-in-draft-version-27-where-the-preview-shows-a-completely-white-screen-with-no-content-rendering",
+      "title": "Diagnose and fix the blank page issue in Draft Version 27 where the preview shows a completely white screen with no content rendering",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-ensure-all-required-assets-fonts-images-audio-files-are-properly-loaded-and-accessible",
-      "title": "Ensure all required assets (fonts, images, audio files) are properly loaded and accessible",
+      "id": "feature-verify-that-all-static-assets-images-fonts-css-are-loading-correctly-from-their-expected-paths",
+      "title": "Verify that all static assets (images, fonts, CSS) are loading correctly from their expected paths",
       "reqIds": [
-        "REQ-3"
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-html-entry-point-frontend-index-html-correctly-references-the-main-javascript-bundle-and-root-div-element",
+      "title": "Ensure the HTML entry point (frontend/index.html) correctly references the main JavaScript bundle and root div element",
+      "reqIds": [
+        "REQ-4"
       ],
       "version": 1
     }
   ],
   "new_feature_requests": [
     {
-      "id": "AR-2",
-      "summary": "Verify all React components are properly exported and imported in the component tree",
+      "id": "AR-3",
+      "summary": "Check for JavaScript errors or console warnings that might prevent React application initialization",
       "reqIds": [
-        "REQ-2"
-      ],
-      "status": "pending"
-    },
-    {
-      "id": "AR-4",
-      "summary": "Validate that all styling and Tailwind CSS classes are correctly applied and not causing layout issues",
-      "reqIds": [
-        "REQ-4"
+        "REQ-3"
       ],
       "status": "pending"
     }

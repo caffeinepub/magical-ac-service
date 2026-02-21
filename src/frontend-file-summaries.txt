@@ -1,5 +1,5 @@
 {
-  "frontend/src/App.tsx": "Main application component that renders the complete LandingPage component.",
+  "frontend/src/App.tsx": "Main application component that wraps LandingPage with LanguageProvider and renders the complete landing page layout.",
   "frontend/src/components/ServiceAreasSection.tsx": "Service areas section with Font Awesome FaMapMarkerAlt icons replacing Lucide MapPin, glass-card capsule styling, and consistent rounded aesthetic across all area cards.",
   "frontend/src/index.css": "Global styles with glassmorphism utilities, OKLCH color system, hero animation support with reduced-motion queries, and shine keyframe animation for button effects.",
   "frontend/tailwind.config.js": "Tailwind configuration extended with hero animation keyframes (drift, shimmer, float-1/2/3) designed for transform/opacity performance and compatible with motion-safe variants, maintaining all existing brand colors and glass shadow utilities.",
@@ -11,14 +11,14 @@
   "frontend/src/components/landing/BookingSection.tsx": "Booking form with glass-panel styling, glass-input fields, and a custom-styled green Book Now button (#25d366) featuring a diagonal white shine animation that sweeps across every 3 seconds with hover scale effect.",
   "frontend/src/components/landing/LandingFooter.tsx": "Footer with Font Awesome FaHeart icon, pill-shaped CTA buttons (rounded-full), glassmorphism styling, and caffeine.ai attribution with UTM tracking.",
   "frontend/src/components/landing/FloatingWhatsAppButton.tsx": "Floating WhatsApp button with pill shape (rounded-full via glass-cta-success class), focus-visible states, keyboard accessibility, and translated aria-label.",
-  "frontend/index.html": "HTML entry point with SEO meta tags, structured data for local business, Google Fonts for multilingual support, and a noscript fallback message for accessibility.",
-  "frontend/src/components/landing/OurWorkSection.tsx": "Gallery section with Font Awesome FaCamera icon, glass-card capsule styling with hover scale effects, and consistent rounded aesthetic for image containers.",
+  "frontend/index.html": "HTML entry point with SEO meta tags, structured data for local business, Google Fonts for multilingual support, and improved noscript fallback with multilingual message.",
+  "frontend/src/components/landing/OurWorkSection.tsx": "Gallery section with Font Awesome FaCamera icon, glass-card capsule styling with hover scale effects, image error handling with fallback UI, and uses correct translation keys (heading, description, footerText) from the translations object.",
   "frontend/src/components/landing/SofaCleaningSection.tsx": "Sofa cleaning section using Font Awesome icons (FaWind, FaStar, FaClock, FaShieldAlt) with IconBadge, glass-panel and glass-card capsule styling, and pill-shaped orange CTA button.",
   "frontend/src/components/landing/LocalSeoPhrasesSection.tsx": "Local SEO section using Font Awesome icons (FaMapMarkerAlt, FaTint, FaWind, FaStar) with IconBadge, glass-card styling with capsule borders (rounded-2xl), and consistent glassmorphism treatment.",
   "frontend/src/components/landing/IconBadge.tsx": "Reusable icon badge component refactored to support Font Awesome (react-icons) IconType instead of Lucide, with consistent capsule styling (rounded-2xl), size variants (sm/md/lg), and color variants (primary/orange).",
   "frontend/src/i18n/translations.ts": "Central translation dictionary updated with \"Get a Free Quote\" as the English primary CTA (hero.primaryCta), with corresponding Hindi and Gujarati translations, maintaining all existing translation keys and multilingual support.",
-  "frontend/src/i18n/LanguageProvider.tsx": "React context provider that manages language state (en/hi/gu), persists selection to localStorage with validation fallback to English, and updates document.documentElement.lang attribute on language change.",
+  "frontend/src/i18n/LanguageProvider.tsx": "React context provider that manages language state with localStorage persistence, validation, error handling, and initialization guard to prevent flash of untranslated content.",
   "frontend/src/i18n/useTranslation.ts": "Convenience hook that wraps useLanguageContext to provide access to current language, setLanguage function, and translated strings throughout the app.",
-  "frontend/src/main.tsx": "Application entry point that wraps the app with QueryClientProvider, InternetIdentityProvider, and LanguageProvider (now properly included) to enable localization context throughout the component tree.",
+  "frontend/src/main.tsx": "Application entry point with QueryClientProvider, InternetIdentityProvider, and LanguageProvider wrappers, plus error boundary and global error handlers for robust initialization and debugging.",
   "frontend/src/components/landing/WaterJetFoamSection.tsx": "Dedicated section component showcasing premium water jet foam service with benefits grid, generated image display, and CTA button, now with all required Font Awesome icons properly imported."
 }

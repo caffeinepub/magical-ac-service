@@ -1,86 +1,85 @@
 {
   "kind": "build_request",
-  "title": "Fix blank draft tab display issue",
+  "title": "Fix blank page rendering in draft preview",
   "projectName": "Water Jet Service",
   "priority": "high",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Diagnose and fix the issue causing the draft tab to display a completely blank white page instead of showing the application content",
+      "text": "Diagnose and fix the blank page issue in Draft Version 27 where the preview shows a completely white screen with no content rendering",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-last"
+          "msg-user-latest"
         ],
         "quotes": [
-          "Draft build kari aapjo je atki gyo che"
+          "Khali",
+          "Have dekhai em karij aapjo plz"
         ]
       },
       "acceptanceCriteria": [
-        "The draft tab loads and displays the complete landing page with all sections visible",
-        "All components (navigation, hero section, services, booking form, footer) render correctly",
-        "No console errors preventing page load",
-        "All three language options (Gujarati, Hindi, English) work properly"
+        "Draft preview loads and displays all page sections (hero, services, booking, etc.)",
+        "Navigation, images, and interactive elements are visible and functional",
+        "Page renders correctly in both Caffeine draft view and standalone preview URL"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Verify all React components are properly exported and imported in the component tree",
+      "text": "Verify that all static assets (images, fonts, CSS) are loading correctly from their expected paths",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-last"
+          "msg-user-latest"
         ]
       },
       "acceptanceCriteria": [
-        "LandingPage component successfully renders all child sections",
-        "No missing component imports causing render failures",
-        "App.tsx correctly mounts the root component"
+        "All images in OurWorkSection render without broken links",
+        "Google Fonts for Gujarati and Devanagari load successfully",
+        "Tailwind CSS and custom styles apply correctly",
+        "Font Awesome icons display throughout the site"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Ensure all required assets (fonts, images, audio files) are properly loaded and accessible",
+      "text": "Check for JavaScript errors or console warnings that might prevent React application initialization",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-last"
+          "msg-user-latest"
         ]
       },
       "acceptanceCriteria": [
-        "Google Fonts for Gujarati/Hindi load successfully",
-        "Background images in hero section render correctly",
-        "Icon sound effects file loads without errors",
-        "All Font Awesome icons display properly"
+        "No critical JavaScript errors in browser console",
+        "React root mounts successfully",
+        "Internet Identity provider initializes without errors",
+        "React Query client initializes properly"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Validate that all styling and Tailwind CSS classes are correctly applied and not causing layout issues",
+      "text": "Ensure the HTML entry point (frontend/index.html) correctly references the main JavaScript bundle and root div element",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-last"
+          "msg-user-latest"
         ]
       },
       "acceptanceCriteria": [
-        "Glassmorphism effects render as intended",
-        "Gradient backgrounds display correctly",
-        "Responsive grid layouts function on different screen sizes",
-        "No CSS conflicts causing invisible content"
+        "Root div with id 'root' exists in index.html",
+        "Script tag correctly references main.tsx entry point",
+        "No conflicting scripts or styles blocking React initialization"
       ]
     }
   ],
   "constraints": [
-    "Do not modify the backend/main.mo file as it is not related to the frontend display issue",
-    "Preserve all existing functionality including multi-language support, animations, and SEO optimization",
-    "Maintain the current glassmorphism design aesthetic and color scheme"
+    "Do not modify backend/main.mo as the issue is frontend-related",
+    "Preserve all existing multi-language translations and functionality",
+    "Maintain the glassmorphism styling and existing component structure"
   ],
   "nonGoals": [
-    "Adding new features or sections to the website",
-    "Changing the visual design or color scheme",
-    "Modifying SEO keywords or meta tags",
-    "Adding new languages beyond the existing three"
+    "Adding new features or sections",
+    "Redesigning the UI or changing the visual theme",
+    "Modifying language support or translation content"
   ],
   "imageRequirements": {
     "required": [],

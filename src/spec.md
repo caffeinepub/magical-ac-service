@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Fix the blank white page issue in the draft tab so the water jet service landing page displays correctly.
+**Goal:** Fix the blank page rendering issue in the Water Jet Service application where Draft Version 27 displays a completely white screen with no content.
 
 **Planned changes:**
-- Diagnose and resolve the root cause preventing the draft tab from rendering the landing page
-- Verify all React components are properly exported and imported throughout the component tree
-- Ensure all required assets (fonts, images, audio files) load correctly without errors
-- Validate Tailwind CSS classes and styling are applied correctly without causing layout issues
+- Diagnose and resolve the blank page issue preventing content from rendering in the draft preview
+- Verify all static assets (images, fonts, CSS) are loading correctly from their expected paths
+- Check for and fix any JavaScript errors or console warnings preventing React initialization
+- Ensure the HTML entry point correctly references the main JavaScript bundle and root div element
 
-**User-visible outcome:** The draft tab will display the complete water jet service landing page with all sections visible (navigation, hero, services, booking form, footer) and functioning properly in all three languages (Gujarati, Hindi, English).
+**User-visible outcome:** The draft preview loads and displays all page sections (hero, services, booking, etc.) with navigation, images, and interactive elements visible and functional in both Caffeine draft view and standalone preview URL.

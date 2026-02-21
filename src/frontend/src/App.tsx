@@ -1,7 +1,12 @@
+import { LanguageProvider } from './i18n/LanguageProvider';
 import LandingPage from './components/landing/LandingPage';
 
 function App() {
-  return <LandingPage />;
+  return (
+    <LanguageProvider>
+      <LandingPage />
+    </LanguageProvider>
+  );
 }
 
 export default App;

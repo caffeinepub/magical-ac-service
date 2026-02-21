@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-diagnose-and-fix-the-issue-causing-the-draft-tab-to-display-a-completely-blank-white-page-instead-of-showing-the-application-content",
-      "featureTitle": "Diagnose and fix the issue causing the draft tab to display a completely blank white page instead of showing the application content",
+      "featureId": "feature-diagnose-and-fix-the-blank-page-issue-in-draft-version-27-where-the-preview-shows-a-completely-white-screen-with-no-content-rendering",
+      "featureTitle": "Diagnose and fix the blank page issue in Draft Version 27 where the preview shows a completely white screen with no content rendering",
       "files": [
-        "frontend/index.html"
+        "frontend/src/App.tsx",
+        "frontend/src/i18n/LanguageProvider.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -20,8 +21,27 @@
       "confidence": "high"
     },
     {
-      "featureId": "feature-ensure-all-required-assets-fonts-images-audio-files-are-properly-loaded-and-accessible",
-      "featureTitle": "Ensure all required assets (fonts, images, audio files) are properly loaded and accessible",
+      "featureId": "feature-verify-that-all-static-assets-images-fonts-css-are-loading-correctly-from-their-expected-paths",
+      "featureTitle": "Verify that all static assets (images, fonts, CSS) are loading correctly from their expected paths",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/components/landing/OurWorkSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-html-entry-point-frontend-index-html-correctly-references-the-main-javascript-bundle-and-root-div-element",
+      "featureTitle": "Ensure the HTML entry point (frontend/index.html) correctly references the main JavaScript bundle and root div element",
       "files": [
         "frontend/index.html"
       ],
@@ -33,7 +53,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-3"
+        "REQ-4"
       ],
       "confidence": "high"
     }
