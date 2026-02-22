@@ -14,7 +14,7 @@ export default function SofaCleaningSection() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="glass-panel p-6 md:p-8">
-            <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-4">{t.sofaCleaning.subheading}</h3>
+            <h3 className="text-2xl font-bold text-orange-800 dark:text-orange-300 mb-4">{t.sofaCleaning.subheading}</h3>
             <ul className="space-y-3 text-gray-700 dark:text-gray-200 font-medium">
               <li>{t.sofaCleaning.services.fabric}</li>
               <li>{t.sofaCleaning.services.leather}</li>
@@ -59,7 +59,7 @@ export default function SofaCleaningSection() {
           <p className="text-gray-600 dark:text-gray-300 font-medium mb-4">
             {t.sofaCleaning.footerText}
             <br />
-            <span className="text-blue-700 dark:text-blue-400 font-semibold">{t.sofaCleaning.footerDiscount}</span>
+            <span className="text-orange-700 dark:text-orange-400 font-semibold">{t.sofaCleaning.footerDiscount}</span>
           </p>
           <a 
             href="tel:+918000262644" 

@@ -28,14 +28,14 @@ export default function LandingNav() {
             alt="Magical AC Service Logo" 
             className="w-10 h-10 md:w-12 md:h-12 object-contain"
           />
-          <div className="text-xl md:text-2xl font-bold text-blue-600 dark:text-blue-400">
+          <div className="text-xl md:text-2xl font-bold text-orange-600 dark:text-orange-400">
             {t.nav.brandName}
           </div>
         </div>
         
         <div className="flex items-center gap-3">
           <Select value={language} onValueChange={(value) => setLanguage(value as 'en' | 'hi' | 'gu')}>
-            <SelectTrigger className="w-[140px] glass-input glass-focus border-blue-200/50 dark:border-blue-700/50">
+            <SelectTrigger className="w-[140px] glass-input glass-focus border-orange-200/50 dark:border-orange-700/50">
               <FaLanguage className="w-4 h-4 mr-2" />
               <SelectValue />
             </SelectTrigger>

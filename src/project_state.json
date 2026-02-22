@@ -1,32 +1,38 @@
 {
   "schemaVersion": "1.0.0",
   "projectStateVersion": 3,
-  "summary": "New project",
+  "summary": "Web application project requiring design improvements including layout, colors, and icons based on reference site",
   "architectural_notes": [],
-  "known_issues": [
-    "Draft Version 27 shows blank page in preview - deployment may not have completed successfully"
-  ],
-  "isFixRequest": true,
+  "known_issues": [],
+  "isFixRequest": false,
   "existing_features": [
     {
-      "id": "feature-diagnose-and-fix-the-blank-page-issue-in-draft-version-27-where-the-preview-shows-a-completely-white-screen-with-no-content-rendering",
-      "title": "Diagnose and fix the blank page issue in Draft Version 27 where the preview shows a completely white screen with no content rendering",
+      "id": "feature-update-the-color-scheme-to-match-the-reference-site-at-https-magical-sofa-cleaning-d8q-caffeine-xyz-replacing-the-current-teal-cyan-blue-water-jet-theme-with-the-new-color-palette",
+      "title": "Update the color scheme to match the reference site at https://magical-sofa-cleaning-d8q.caffeine.xyz, replacing the current teal/cyan/blue water jet theme with the new color palette",
       "reqIds": [
         "REQ-1"
       ],
       "version": 1
     },
     {
-      "id": "feature-verify-that-all-static-assets-images-fonts-css-are-loading-correctly-from-their-expected-paths",
-      "title": "Verify that all static assets (images, fonts, CSS) are loading correctly from their expected paths",
+      "id": "feature-replace-all-font-awesome-icons-throughout-the-application-with-new-icons-that-match-the-design-style-of-the-reference-site",
+      "title": "Replace all Font Awesome icons throughout the application with new icons that match the design style of the reference site",
       "reqIds": [
         "REQ-2"
       ],
       "version": 1
     },
     {
-      "id": "feature-ensure-the-html-entry-point-frontend-index-html-correctly-references-the-main-javascript-bundle-and-root-div-element",
-      "title": "Ensure the HTML entry point (frontend/index.html) correctly references the main JavaScript bundle and root div element",
+      "id": "feature-update-the-overall-layout-and-design-structure-to-match-the-reference-site-s-visual-hierarchy-and-component-arrangement",
+      "title": "Update the overall layout and design structure to match the reference site's visual hierarchy and component arrangement",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-gradient-backgrounds-glassmorphism-effects-and-visual-decorations-to-align-with-the-reference-site-aesthetic",
+      "title": "Update gradient backgrounds, glassmorphism effects, and visual decorations to align with the reference site aesthetic",
       "reqIds": [
         "REQ-4"
       ],
@@ -35,15 +41,13 @@
   ],
   "new_feature_requests": [
     {
-      "id": "AR-3",
-      "summary": "Check for JavaScript errors or console warnings that might prevent React application initialization",
-      "reqIds": [
-        "REQ-3"
-      ],
+      "id": "AR-1",
+      "summary": "Update design, colors, and icons to match reference site style",
+      "reqIds": [],
       "status": "pending"
     }
   ],
-  "projectName": "Water Jet Service",
+  "projectName": "Magical Sofa Cleaning",
   "clarification_mode": "instant",
   "clarification_rounds": 0
 }

@@ -47,7 +47,7 @@ export default function BookingSection() {
     <section id="book" className="py-16 glass-section-blue">
       <div className="container mx-auto px-4 max-w-lg">
         <div className="glass-panel p-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-cyan-700 dark:text-cyan-300">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-orange-700 dark:text-orange-300">
             {t.booking.heading}
           </h2>
           <form onSubmit={handleSubmit} className="space-y-6">

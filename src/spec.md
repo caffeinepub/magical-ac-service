@@ -1,12 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Fix the blank page rendering issue in the Water Jet Service application where Draft Version 27 displays a completely white screen with no content.
+**Goal:** Redesign the UI with a new color scheme and icon set to match the reference site aesthetic.
 
 **Planned changes:**
-- Diagnose and resolve the blank page issue preventing content from rendering in the draft preview
-- Verify all static assets (images, fonts, CSS) are loading correctly from their expected paths
-- Check for and fix any JavaScript errors or console warnings preventing React initialization
-- Ensure the HTML entry point correctly references the main JavaScript bundle and root div element
+- Update the color palette throughout the application to match https://magical-sofa-cleaning-d8q.caffeine.xyz, replacing the current teal/cyan/blue water jet theme
+- Replace all Font Awesome icons with new icons matching the reference design style
+- Update layout structure, spacing, and typography to align with the reference site's visual hierarchy
+- Modify gradient backgrounds, glassmorphism effects, and visual decorations to match the new aesthetic
 
-**User-visible outcome:** The draft preview loads and displays all page sections (hero, services, booking, etc.) with navigation, images, and interactive elements visible and functional in both Caffeine draft view and standalone preview URL.
+**User-visible outcome:** The application will have a refreshed visual design with a new color scheme and icon set, while maintaining all existing functionality including WhatsApp integration, booking form, and multilingual support.

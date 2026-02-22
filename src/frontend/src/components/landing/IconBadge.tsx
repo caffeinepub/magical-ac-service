@@ -24,7 +24,7 @@ export default function IconBadge({ icon: Icon, variant = 'primary', size = 'md'
   };
 
   const variantClasses = {
-    primary: 'bg-gradient-to-br from-cyan-500/25 to-teal-600/25 dark:from-cyan-400/25 dark:to-teal-500/25 border-cyan-400/40 dark:border-cyan-400/25 text-cyan-600 dark:text-cyan-400',
+    primary: 'bg-gradient-to-br from-orange-500/25 to-red-600/25 dark:from-orange-400/25 dark:to-red-500/25 border-orange-400/40 dark:border-orange-400/25 text-orange-600 dark:text-orange-400',
     orange: 'bg-gradient-to-br from-orange-500/25 to-orange-600/25 dark:from-orange-400/25 dark:to-orange-500/25 border-orange-400/40 dark:border-orange-400/25 text-orange-600 dark:text-orange-400',
   };
 

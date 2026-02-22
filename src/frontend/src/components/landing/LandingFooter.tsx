@@ -19,7 +19,7 @@ export default function LandingFooter() {
               className="w-24 h-24 object-contain"
             />
           </div>
-          <h3 className="text-3xl font-bold text-cyan-400 mb-2">
+          <h3 className="text-3xl font-bold text-orange-400 mb-2">
             {t.nav.brandName}
           </h3>
           <p className="text-gray-400">{t.footer.tagline}</p>
@@ -54,7 +54,7 @@ export default function LandingFooter() {
               href={`https://caffeine.ai/?utm_source=Caffeine-footer&utm_medium=referral&utm_content=${appIdentifier}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan-400 hover:text-cyan-300 transition"
+              className="text-orange-400 hover:text-orange-300 transition"
             >
               caffeine.ai
             </a>

@@ -1,85 +1,95 @@
 {
   "kind": "build_request",
-  "title": "Fix blank page rendering in draft preview",
-  "projectName": "Water Jet Service",
-  "priority": "high",
+  "title": "Redesign UI with new color scheme and icons",
+  "projectName": "Magical Sofa Cleaning",
+  "priority": "normal",
   "requirements": [
     {
       "id": "REQ-1",
-      "text": "Diagnose and fix the blank page issue in Draft Version 27 where the preview shows a completely white screen with no content rendering",
+      "text": "Update the color scheme to match the reference site at https://magical-sofa-cleaning-d8q.caffeine.xyz, replacing the current teal/cyan/blue water jet theme with the new color palette",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-latest"
+          "msg-7"
         ],
         "quotes": [
-          "Khali",
-          "Have dekhai em karij aapjo plz"
+          "aavi ritno color"
         ]
       },
       "acceptanceCriteria": [
-        "Draft preview loads and displays all page sections (hero, services, booking, etc.)",
-        "Navigation, images, and interactive elements are visible and functional",
-        "Page renders correctly in both Caffeine draft view and standalone preview URL"
+        "All primary, secondary, and accent colors are updated throughout the application",
+        "Color variables in frontend/index.css and frontend/src/index.css are modified to reflect the new palette",
+        "Glassmorphism effects and gradients use the new color scheme",
+        "Button colors, backgrounds, and text colors are consistent with the new design"
       ]
     },
     {
       "id": "REQ-2",
-      "text": "Verify that all static assets (images, fonts, CSS) are loading correctly from their expected paths",
+      "text": "Replace all Font Awesome icons throughout the application with new icons that match the design style of the reference site",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-latest"
+          "msg-7"
+        ],
+        "quotes": [
+          "icon badhu aavi rite karva nu che"
         ]
       },
       "acceptanceCriteria": [
-        "All images in OurWorkSection render without broken links",
-        "Google Fonts for Gujarati and Devanagari load successfully",
-        "Tailwind CSS and custom styles apply correctly",
-        "Font Awesome icons display throughout the site"
+        "Icons in ServicesSection, CoverageSection, ServiceAreasSection, SofaCleaningSection, and WaterJetFoamSection are replaced",
+        "IconBadge component uses new icon assets or icon library",
+        "Navigation and footer icons are updated",
+        "All icons maintain consistent visual style and sizing"
       ]
     },
     {
       "id": "REQ-3",
-      "text": "Check for JavaScript errors or console warnings that might prevent React application initialization",
+      "text": "Update the overall layout and design structure to match the reference site's visual hierarchy and component arrangement",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-latest"
+          "msg-7"
+        ],
+        "quotes": [
+          "Aana jevi designe"
         ]
       },
       "acceptanceCriteria": [
-        "No critical JavaScript errors in browser console",
-        "React root mounts successfully",
-        "Internet Identity provider initializes without errors",
-        "React Query client initializes properly"
+        "Section spacing, padding, and margins match the reference design",
+        "Typography hierarchy (font sizes, weights, line heights) is updated",
+        "Card layouts and component styling follow the reference site patterns",
+        "Responsive behavior matches the reference site across device sizes"
       ]
     },
     {
       "id": "REQ-4",
-      "text": "Ensure the HTML entry point (frontend/index.html) correctly references the main JavaScript bundle and root div element",
+      "text": "Update gradient backgrounds, glassmorphism effects, and visual decorations to align with the reference site aesthetic",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-user-latest"
+          "msg-7"
         ]
       },
       "acceptanceCriteria": [
-        "Root div with id 'root' exists in index.html",
-        "Script tag correctly references main.tsx entry point",
-        "No conflicting scripts or styles blocking React initialization"
+        "Hero section background and overlays match reference styling",
+        "Glass panel effects are updated with new colors and opacity values",
+        "Floating decorative elements match the reference design",
+        "Hover states and animations are consistent with the new theme"
       ]
     }
   ],
   "constraints": [
-    "Do not modify backend/main.mo as the issue is frontend-related",
-    "Preserve all existing multi-language translations and functionality",
-    "Maintain the glassmorphism styling and existing component structure"
+    "Preserve all existing functionality including WhatsApp integration, booking form, and language switching",
+    "Do not modify backend/main.mo as no backend changes are needed",
+    "Maintain multilingual support for English, Hindi, and Gujarati",
+    "Keep the existing component structure and routing",
+    "Do not change immutable paths: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui"
   ],
   "nonGoals": [
-    "Adding new features or sections",
-    "Redesigning the UI or changing the visual theme",
-    "Modifying language support or translation content"
+    "Adding new features or sections beyond design updates",
+    "Changing the content or text of existing sections",
+    "Modifying the booking flow or WhatsApp integration logic",
+    "Restructuring the component hierarchy"
   ],
   "imageRequirements": {
     "required": [],

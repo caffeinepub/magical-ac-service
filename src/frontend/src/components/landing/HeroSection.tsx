@@ -12,8 +12,8 @@ export default function HeroSection() {
           alt={t.hero.imageAlt}
           className="w-full h-full object-cover motion-safe:animate-hero-drift"
         />
-        {/* Multi-layer overlay for strong text contrast - Updated to Teal/Cyan */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cyan-900/85 via-teal-800/75 to-cyan-700/85"></div>
+        {/* Multi-layer overlay for strong text contrast - Updated to Orange/Red */}
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-900/85 via-red-800/75 to-orange-700/85"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/50"></div>
         <div className="absolute inset-0 backdrop-blur-[1px]"></div>
         
@@ -23,9 +23,9 @@ export default function HeroSection() {
       
       {/* Floating decorative blobs - Updated colors */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-cyan-400/20 rounded-full blur-3xl motion-safe:animate-hero-float-1"></div>
-        <div className="absolute top-[60%] right-[10%] w-80 h-80 bg-teal-400/15 rounded-full blur-3xl motion-safe:animate-hero-float-2"></div>
-        <div className="absolute bottom-[15%] left-[15%] w-72 h-72 bg-cyan-500/15 rounded-full blur-3xl motion-safe:animate-hero-float-3"></div>
+        <div className="absolute top-[10%] left-[5%] w-64 h-64 bg-orange-400/20 rounded-full blur-3xl motion-safe:animate-hero-float-1"></div>
+        <div className="absolute top-[60%] right-[10%] w-80 h-80 bg-red-400/15 rounded-full blur-3xl motion-safe:animate-hero-float-2"></div>
+        <div className="absolute bottom-[15%] left-[15%] w-72 h-72 bg-orange-500/15 rounded-full blur-3xl motion-safe:animate-hero-float-3"></div>
       </div>
       
       {/* Glass Content Panel - Capsule Style */}
@@ -58,7 +58,7 @@ export default function HeroSection() {
             </a>
             <a
               href="tel:+918000262644"
-              className="glass-cta-white text-cyan-900 px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold w-full sm:w-auto text-center"
+              className="glass-cta-white text-orange-700 dark:text-orange-600 px-10 md:px-12 py-4 md:py-5 text-lg md:text-xl font-bold w-full sm:w-auto text-center"
             >
               {t.hero.callButton}
             </a>

@@ -34,7 +34,7 @@ export default function WaterJetFoamSection() {
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
               <div className="glass-card p-4 flex items-start gap-3">
-                <FaStar className="w-6 h-6 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
+                <FaStar className="w-6 h-6 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-1">{t.waterJetFoam.benefits.deepCleaning.title}</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">{t.waterJetFoam.benefits.deepCleaning.description}</p>
@@ -42,7 +42,7 @@ export default function WaterJetFoamSection() {
               </div>
               
               <div className="glass-card p-4 flex items-start gap-3">
-                <FaShieldAlt className="w-6 h-6 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
+                <FaShieldAlt className="w-6 h-6 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-1">{t.waterJetFoam.benefits.protection.title}</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">{t.waterJetFoam.benefits.protection.description}</p>
@@ -50,7 +50,7 @@ export default function WaterJetFoamSection() {
               </div>
               
               <div className="glass-card p-4 flex items-start gap-3">
-                <FaLeaf className="w-6 h-6 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
+                <FaLeaf className="w-6 h-6 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-1">{t.waterJetFoam.benefits.ecoFriendly.title}</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">{t.waterJetFoam.benefits.ecoFriendly.description}</p>
@@ -58,7 +58,7 @@ export default function WaterJetFoamSection() {
               </div>
               
               <div className="glass-card p-4 flex items-start gap-3">
-                <FaTint className="w-6 h-6 text-cyan-600 dark:text-cyan-400 flex-shrink-0 mt-1" />
+                <FaTint className="w-6 h-6 text-orange-600 dark:text-orange-400 flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-bold text-gray-800 dark:text-gray-100 mb-1">{t.waterJetFoam.benefits.efficiency.title}</h4>
                   <p className="text-sm text-gray-600 dark:text-gray-300">{t.waterJetFoam.benefits.efficiency.description}</p>

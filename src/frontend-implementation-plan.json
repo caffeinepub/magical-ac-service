@@ -1,111 +1,298 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix blank page rendering in draft preview",
+  "title": "Redesign UI with new color scheme and icons",
   "requirements": [
     {
       "id": "REQ-1",
-      "summary": "Diagnose and fix the blank page issue where the preview shows a completely white screen with no content rendering",
+      "summary": "Update the color scheme to match the reference site, replacing the current teal/cyan/blue water jet theme with the new color palette",
       "acceptanceCriteria": [
-        "Draft preview loads and displays all page sections (hero, services, booking, etc.)",
-        "Navigation, images, and interactive elements are visible and functional",
-        "Page renders correctly in both Caffeine draft view and standalone preview URL"
+        "All primary, secondary, and accent colors are updated throughout the application",
+        "Color variables in frontend/index.css and frontend/src/index.css are modified to reflect the new palette",
+        "Glassmorphism effects and gradients use the new color scheme",
+        "Button colors, backgrounds, and text colors are consistent with the new design"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/main.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add error boundary wrapper around the root App component to catch and display React initialization errors. Add console logging to verify React Query and Internet Identity provider initialization. Ensure the root element mounting succeeds and log any failures."
+          "description": "Update CSS custom properties for the color scheme. Replace the current water jet brand colors (teal/cyan/blue defined in --primary, --secondary, --accent, --muted, --card, --popover variables) with the new color palette from the reference site. Update both light and dark theme color values in the :root and .dark selectors. Modify glassmorphism effect colors in .glass-panel and .glass-effect classes to use the new palette. Ensure gradient colors in utility classes are updated to match the new scheme."
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/index.css",
           "operation": "modify",
-          "description": "Wrap LandingPage component with error boundary and add fallback UI. Add conditional rendering checks to ensure LanguageProvider is properly initialized before rendering child components."
+          "description": "Update global Tailwind CSS color variables defined using OKLCH color system. Modify design tokens for backgrounds, foregrounds, borders, and component colors in both light and dark theme sections to align with the new color palette from the reference site. Ensure consistency between this file and frontend/src/index.css."
         },
         {
-          "path": "frontend/src/i18n/LanguageProvider.tsx",
+          "path": "frontend/src/components/landing/HeroSection.tsx",
           "operation": "modify",
-          "description": "Add error handling for localStorage access failures and invalid language values. Provide fallback to English if stored language is corrupted or unavailable. Add initialization logging to verify context provider mounts successfully."
+          "description": "Update gradient overlay colors and floating decorative blob colors to match the new color scheme. Modify the gradient classes on the overlay divs and the background colors of the floating-blob elements. Update glass-panel styling to use new color variables. Ensure button colors (primary and secondary CTAs) reflect the new palette."
         },
         {
-          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Add defensive checks for translation hook availability. Wrap component content in error boundary. Add loading state to prevent rendering incomplete content during initialization."
+          "description": "Update service card background colors, border colors, and icon colors to match the new color scheme. Modify glassmorphism effects and hover state colors on service cards to use the new palette. Ensure text colors maintain proper contrast with the new backgrounds."
+        },
+        {
+          "path": "frontend/src/components/landing/SofaCleaningSection.tsx",
+          "operation": "modify",
+          "description": "Update section background gradients, card colors, and IconBadge color variants to match the new color scheme. Modify the promotional discount text styling and CTA button colors to use the new palette. Update glassmorphism effects on feature badges."
+        },
+        {
+          "path": "frontend/src/components/landing/WaterJetFoamSection.tsx",
+          "operation": "modify",
+          "description": "Update benefit card background colors, glassmorphism effects, and icon colors to match the new color scheme. Modify gradient backgrounds and CTA button colors to use the new palette. Ensure the two-column layout maintains visual consistency with the updated colors."
+        },
+        {
+          "path": "frontend/src/components/landing/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Update form input colors, button colors, and glassmorphism panel styling to match the new color scheme. Modify border colors, focus states, and hover effects to use the new palette. Ensure form accessibility is maintained with proper contrast ratios."
+        },
+        {
+          "path": "frontend/src/components/landing/CoverageSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism panel background colors, text colors, and icon colors to match the new color scheme. Modify border and shadow effects to align with the new palette."
+        },
+        {
+          "path": "frontend/src/components/landing/FloatingWhatsAppButton.tsx",
+          "operation": "modify",
+          "description": "Update button background colors, hover state colors, and glassmorphism effects to match the new color scheme. Ensure the floating button remains visually prominent while using the new palette."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingNav.tsx",
+          "operation": "modify",
+          "description": "Update navigation bar background colors, text colors, and 'Book Now' button colors to match the new color scheme. Modify glassmorphism effects on the sticky navigation to use the new palette. Ensure language selector styling aligns with the new design."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingFooter.tsx",
+          "operation": "modify",
+          "description": "Update footer background colors, text colors, CTA button colors, and link colors to match the new color scheme. Modify any gradient or glassmorphism effects to use the new palette."
+        },
+        {
+          "path": "frontend/src/components/landing/LocalSeoPhrasesSection.tsx",
+          "operation": "modify",
+          "description": "Update grid card background colors, icon colors, and text colors to match the new color scheme. Modify glassmorphism effects and hover states to use the new palette."
+        },
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Update service area card background colors, glassmorphism effects, and icon colors to match the new color scheme. Modify border colors and hover states to use the new palette."
+        },
+        {
+          "path": "frontend/src/components/landing/IconBadge.tsx",
+          "operation": "modify",
+          "description": "Update gradient backgrounds for both primary and orange variants to match the new color scheme. Modify hover animation colors and ensure the component variants align with the new palette throughout the application."
         }
       ]
     },
     {
       "id": "REQ-2",
-      "summary": "Verify that all static assets (images, fonts, CSS) are loading correctly from their expected paths",
+      "summary": "Replace all Font Awesome icons throughout the application with new icons that match the design style of the reference site",
       "acceptanceCriteria": [
-        "All images in OurWorkSection render without broken links",
-        "Google Fonts for Gujarati and Devanagari load successfully",
-        "Tailwind CSS and custom styles apply correctly",
-        "Font Awesome icons display throughout the site"
+        "Icons in ServicesSection, CoverageSection, ServiceAreasSection, SofaCleaningSection, and WaterJetFoamSection are replaced",
+        "IconBadge component uses new icon assets or icon library",
+        "Navigation and footer icons are updated",
+        "All icons maintain consistent visual style and sizing"
       ],
       "file_operations": [
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
           "operation": "modify",
-          "description": "Verify script tag correctly references the main.tsx entry point with proper module type. Ensure Font Awesome CDN link is valid and loads before React initialization. Add onerror handlers to external font and icon resources to log loading failures. Verify the root div element exists and has the correct id='root'."
+          "description": "Replace Font Awesome icons for the four core AC services (water jet, water jet foam, repairing, installation) with new icon assets or alternative icon library components that match the reference site design style. Ensure icon sizing and positioning remain consistent. Update import statements to reflect the new icon source."
         },
         {
-          "path": "frontend/src/components/landing/OurWorkSection.tsx",
+          "path": "frontend/src/components/landing/CoverageSection.tsx",
           "operation": "modify",
-          "description": "Update image source paths to reference the exact workspace paths: frontend/public/assets/generated/ac-water-jet-1.dim_1600x900.png, frontend/public/assets/generated/ac-water-jet-2.dim_1600x900.png, frontend/public/assets/generated/ac-before-after.dim_1600x900.png, frontend/public/assets/generated/ac-service-home.dim_1600x900.png, frontend/public/assets/generated/ac-service-team.dim_1600x900.png, and frontend/public/assets/generated/ac-service-van.dim_1600x900.png. Add error handlers to img elements to log any load failures and display fallback content."
+          "description": "Replace Font Awesome icons used in the coverage information display with new icon assets or alternative icon library components. Ensure icons maintain the same semantic meaning and visual prominence as the originals while matching the reference site style."
         },
         {
-          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
           "operation": "modify",
-          "description": "Verify background image path for the hero section references the correct workspace location. Add error handling for image loading failures. Ensure the animated background loads before displaying content to prevent layout shift."
+          "description": "Replace Font Awesome map marker icons in the service areas grid with new icon assets or alternative icon library components that match the reference site design. Update all icon references throughout the three-column grid layout."
         },
         {
-          "path": "frontend/index.css",
+          "path": "frontend/src/components/landing/SofaCleaningSection.tsx",
           "operation": "modify",
-          "description": "Verify Tailwind directives are properly placed at the top of the file. Ensure custom CSS variables are defined correctly and don't conflict with component rendering. Add fallback values for OKLCH colors in case of browser compatibility issues."
+          "description": "Replace icons used in the four feature badges with new icon assets or alternative icon library components. Update the IconBadge usage to pass new icon components or asset references. Ensure feature badge icons (representing benefits like deep cleaning, protection, eco-friendly, efficiency) maintain semantic clarity with the new icon style."
+        },
+        {
+          "path": "frontend/src/components/landing/WaterJetFoamSection.tsx",
+          "operation": "modify",
+          "description": "Replace icons in the four benefit cards (deep cleaning, protection, eco-friendly, efficiency) with new icon assets or alternative icon library components. Ensure the two-column layout maintains visual balance with the new icon style and sizing."
+        },
+        {
+          "path": "frontend/src/components/landing/IconBadge.tsx",
+          "operation": "modify",
+          "description": "Update the IconBadge component to accept and render new icon assets or alternative icon library components instead of Font Awesome icons. Modify the component's icon prop handling and rendering logic to support the new icon system. Ensure size variants and hover animations work correctly with the new icons."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingNav.tsx",
+          "operation": "modify",
+          "description": "Replace any navigation icons with new icon assets or alternative icon library components. If the logo or language selector uses icon elements, update them to match the reference site design style."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingFooter.tsx",
+          "operation": "modify",
+          "description": "Replace footer icons (service van icon, any social or contact icons) with new icon assets or alternative icon library components. Ensure the footer maintains visual consistency with the new icon style throughout."
+        },
+        {
+          "path": "frontend/src/components/landing/LocalSeoPhrasesSection.tsx",
+          "operation": "modify",
+          "description": "Replace icons in the four local service phrases grid with new icon assets or alternative icon library components. Ensure icons maintain semantic relevance to the phrases they accompany while matching the reference site style."
+        },
+        {
+          "path": "frontend/src/components/landing/FloatingWhatsAppButton.tsx",
+          "operation": "modify",
+          "description": "Replace the WhatsApp icon with a new icon asset or alternative icon library component that matches the reference site design. Ensure the floating button remains visually recognizable and accessible."
         }
       ]
     },
     {
       "id": "REQ-3",
-      "summary": "Check for JavaScript errors or console warnings that might prevent React application initialization",
+      "summary": "Update the overall layout and design structure to match the reference site's visual hierarchy and component arrangement",
       "acceptanceCriteria": [
-        "No critical JavaScript errors in browser console",
-        "React root mounts successfully",
-        "Internet Identity provider initializes without errors",
-        "React Query client initializes properly"
+        "Section spacing, padding, and margins match the reference design",
+        "Typography hierarchy (font sizes, weights, line heights) is updated",
+        "Card layouts and component styling follow the reference site patterns",
+        "Responsive behavior matches the reference site across device sizes"
       ],
       "file_operations": [
         {
-          "path": "frontend/src/main.tsx",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Add try-catch blocks around React root creation and rendering. Log successful initialization steps to console. Add window.onerror handler to catch any uncaught exceptions during app bootstrap. Verify React Query client configuration doesn't cause initialization failures."
+          "description": "Update typography hierarchy by modifying base font sizes, line heights, and font weights to match the reference site. Adjust spacing utilities and add any custom utility classes needed for the new layout patterns. Update container max-widths and responsive breakpoint behaviors if needed to match the reference design."
         },
         {
-          "path": "frontend/src/hooks/useInternetIdentity.ts",
+          "path": "frontend/tailwind.config.js",
           "operation": "modify",
-          "description": "Add error handling for AuthClient initialization failures. Provide fallback behavior if Internet Identity service is unavailable. Add console logging for authentication state changes. Ensure the provider doesn't block rendering if II initialization fails."
+          "description": "Update Tailwind configuration to match the reference site's design system. Modify font size scale, spacing scale, border radius values, and container settings. Adjust responsive breakpoints if the reference site uses different viewport handling. Ensure custom shadows and other theme extensions align with the reference design patterns."
         },
         {
-          "path": "frontend/src/hooks/useActor.ts",
+          "path": "frontend/src/components/landing/LandingPage.tsx",
           "operation": "modify",
-          "description": "Add error handling for actor creation failures. Ensure the hook returns a safe default value if backend connection fails. Add logging to track actor initialization and query invalidation. Prevent the hook from throwing errors that would crash the component tree."
+          "description": "Update section spacing and vertical rhythm between components to match the reference site. Adjust padding, margins, and gap values for the overall page layout. Modify the gradient background implementation if the reference site uses different background patterns. Ensure the order and arrangement of sections match the reference visual hierarchy."
+        },
+        {
+          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update hero section layout structure, spacing, and positioning to match the reference site. Modify heading font sizes, tagline styling, and CTA button sizing and placement. Adjust floating decorative blob positioning and animation timing if the reference site uses different decorative patterns. Update vertical padding and content centering to match the reference hierarchy."
+        },
+        {
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Update service card layout, spacing, and grid structure to match the reference site. Modify card padding, heading sizes, description text sizing, and icon positioning. Adjust responsive grid behavior (columns at different breakpoints) to match the reference design. Update card height, aspect ratio, or content alignment as needed."
+        },
+        {
+          "path": "frontend/src/components/landing/SofaCleaningSection.tsx",
+          "operation": "modify",
+          "description": "Update section layout structure, spacing between elements, and typography hierarchy to match the reference site. Modify heading sizes, feature badge arrangement, pricing display styling, and CTA button sizing. Adjust padding and margins to align with the reference visual hierarchy."
+        },
+        {
+          "path": "frontend/src/components/landing/WaterJetFoamSection.tsx",
+          "operation": "modify",
+          "description": "Update two-column layout proportions, spacing, and responsive behavior to match the reference site. Modify heading sizes, benefit card layout, and image positioning. Adjust grid gaps, padding, and alignment to align with the reference design structure."
+        },
+        {
+          "path": "frontend/src/components/landing/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Update form layout, input sizing, spacing, and button placement to match the reference site. Modify label typography, input field heights, and form padding. Adjust responsive behavior and form width at different breakpoints to align with the reference design patterns."
+        },
+        {
+          "path": "frontend/src/components/landing/CoverageSection.tsx",
+          "operation": "modify",
+          "description": "Update section padding, text sizing, and panel layout to match the reference site. Modify heading hierarchy and paragraph spacing to align with the reference typography system."
+        },
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Update grid layout, card spacing, and responsive column behavior to match the reference site. Modify card padding, text sizing, and icon positioning. Adjust grid gaps and card heights to align with the reference design structure."
+        },
+        {
+          "path": "frontend/src/components/landing/LocalSeoPhrasesSection.tsx",
+          "operation": "modify",
+          "description": "Update grid layout, card sizing, and spacing to match the reference site. Modify text hierarchy and icon positioning within cards. Adjust responsive behavior to align with the reference design patterns."
+        },
+        {
+          "path": "frontend/src/components/landing/OurWorkSection.tsx",
+          "operation": "modify",
+          "description": "Update gallery grid layout, image aspect ratios, and spacing to match the reference site. Modify hover effects, card styling, and responsive column behavior. Adjust gap sizes and image container styling to align with the reference design structure."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingNav.tsx",
+          "operation": "modify",
+          "description": "Update navigation bar height, padding, and layout structure to match the reference site. Modify logo sizing, button dimensions, and spacing between navigation elements. Adjust sticky behavior and responsive layout to align with the reference design."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingFooter.tsx",
+          "operation": "modify",
+          "description": "Update footer layout structure, padding, and spacing to match the reference site. Modify text sizing, button placement, and content arrangement. Adjust vertical and horizontal spacing to align with the reference design hierarchy."
         }
       ]
     },
     {
       "id": "REQ-4",
-      "summary": "Ensure the HTML entry point correctly references the main JavaScript bundle and root div element",
+      "summary": "Update gradient backgrounds, glassmorphism effects, and visual decorations to align with the reference site aesthetic",
       "acceptanceCriteria": [
-        "Root div with id 'root' exists in index.html",
-        "Script tag correctly references main.tsx entry point",
-        "No conflicting scripts or styles blocking React initialization"
+        "Hero section background and overlays match reference styling",
+        "Glass panel effects are updated with new colors and opacity values",
+        "Floating decorative elements match the reference design",
+        "Hover states and animations are consistent with the new theme"
       ],
       "file_operations": [
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "Verify the root div element exists with the exact id='root' and no conflicting attributes. Ensure the script tag referencing src='/src/main.tsx' has type='module' attribute. Check that no inline scripts or conflicting stylesheets are blocking React initialization. Move any blocking resources to async/defer or remove them. Verify meta viewport and charset are correctly configured. Ensure Font Awesome CDN script loads without errors and doesn't conflict with React."
+          "description": "Update glassmorphism utility classes (.glass-panel, .glass-effect) with new backdrop-blur values, opacity levels, and border styling to match the reference site aesthetic. Modify gradient utility classes to use the new color palette and gradient directions from the reference design. Adjust animation keyframes and timing functions if the reference site uses different animation patterns."
+        },
+        {
+          "path": "frontend/src/components/landing/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Update hero section gradient overlays by modifying gradient direction, color stops, and opacity values to match the reference site. Update floating decorative blob styling including blur effects, opacity, colors, and positioning. Modify glass-panel effects on the content container to match the reference aesthetic. Adjust animation timings and transforms for floating elements if the reference site uses different animation patterns."
+        },
+        {
+          "path": "frontend/src/components/landing/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism effects on service cards by modifying backdrop-blur, background opacity, and border styling to match the reference site. Update hover state transitions, shadow effects, and transform animations to align with the reference design aesthetic. Modify gradient accents or decorative elements if present in the reference design."
+        },
+        {
+          "path": "frontend/src/components/landing/SofaCleaningSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism effects on feature badges and section panels to match the reference site aesthetic. Modify backdrop-blur, opacity, and border styling. Update hover state animations and shadow effects to align with the reference design. Adjust gradient backgrounds or decorative elements as needed."
+        },
+        {
+          "path": "frontend/src/components/landing/WaterJetFoamSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism effects on benefit cards by modifying backdrop-blur, background opacity, and border styling to match the reference site. Update hover state transitions and shadow effects. Adjust any gradient backgrounds or decorative overlays to align with the reference aesthetic."
+        },
+        {
+          "path": "frontend/src/components/landing/BookingSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism effects on the form panel by modifying backdrop-blur, opacity, and border styling to match the reference site. Update input focus states, button hover effects, and any gradient accents to align with the reference design aesthetic."
+        },
+        {
+          "path": "frontend/src/components/landing/CoverageSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism panel effects by modifying backdrop-blur, background opacity, and border styling to match the reference site aesthetic. Adjust shadow effects and hover states as needed."
+        },
+        {
+          "path": "frontend/src/components/ServiceAreasSection.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism card effects by modifying backdrop-blur, opacity, and border styling to match the reference site. Update hover state transitions and shadow effects to align with the reference design aesthetic."
+        },
+        {
+          "path": "frontend/src/components/landing/FloatingWhatsAppButton.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism styling on the floating button by modifying backdrop-blur, background opacity, and border effects to match the reference site. Update hover state animations, shadow effects, and any pulse or glow effects to align with the reference aesthetic."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingNav.tsx",
+          "operation": "modify",
+          "description": "Update glassmorphism effects on the sticky navigation bar by modifying backdrop-blur, background opacity, and border styling to match the reference site. Update scroll-triggered styling changes and shadow effects to align with the reference design aesthetic."
+        },
+        {
+          "path": "frontend/src/components/landing/LandingPage.tsx",
+          "operation": "modify",
+          "description": "Update overall page gradient background by modifying gradient colors, directions, and opacity values to match the reference site aesthetic. Adjust any page-level decorative elements or overlay effects to align with the reference design."
         }
       ]
     }
